@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+  background-color: #fafafa;
+}
+
+html{
+  font: 100%;
+}
+
+.mainWrap{
+padding: 6em;
+width: 900px;
+margin: auto;
+
+}
+
+img{
+  margin: 5em;
+  width: 100px;
+  height: 100px;
+}
+
+.headLoginBox{
+  text-align: center;
+}
+
+.boxLogin{
+  padding: 2px 4px 2px 4px;
+  margin: auto;
+  display:inline-block;
+  border: solid 1px #D5D5D5;
+}
+
+.title{
+  font-family: Source Sans Pro;
+  color: white;
+  letter-spacing: 10px;
+  text-align: center;
+  font-size: 50px;
+  padding-bottom: 22px 0 22px 0;
+  margin-bottom: 22px;
+  border-bottom: solid 1px #D5D5D5;
+  background: #D5D5D5;
+
+}
+
+#usernameLogin{
+  letter-spacing: 1.5px;
+  display: block;
+  text-align: center;
+  margin: 0 20px 0 30px;
+}
+
+#passwordLogin{
+  letter-spacing: 1.5px;
+  display: block;
+  text-align: center;
+  margin: 0 20px 0 30px;
+}
+
+.submit{
+  letter-spacing: 1.5px
+  margin: 40px;
+  width: 75px;
+  height:25px;
+  text-align: center;
+  background-color: #D5D5D5;
+  color: white;
+  border: none;
+  outline-style: none;
+}
