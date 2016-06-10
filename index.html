@@ -2,103 +2,158 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Slink</title>
-    <link rel= "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.js"></script> <!-- Do we need lodash? -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <link rel = "stylesheet" href = "assets/css/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,100,700' rel='stylesheet' type='text/css'>
+  <title>KDR-Slink</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
   </head>
   <body>
-    <div class="mainWrap">
-        <img src = "slink-logo.png" alt ="logo"></img>
 
+    <div class="container">
 
+        <header>
+          <div id="banner">SLINK</div>
+        </header>
 
-  <!--SEQUENCE 1 - LOGIN BOX-->
-
-<div class = "headLoginBox">
-    <div class = "boxLogin">
-      <h3 class = "title"> SLINK </h3>
-      <input id = "usernameLogin" placeholder = "username"></input>
-      <input id = "passwordLogin" placeholder = "password"></input>
-      <button class = "submit"> submit </button>
-    </div>
-
-
-<!-- SEQUENCE 2 - USER BOOKMARKS -->
-
-
-  <div class = "seeBookmarksList">
   </div>
 
-  <script id= "see_bookmark" type = "text/html">
-  <div class = "listBookmarks">
-    <ul class = "userBookmarks"><h3 class = "listHead"><i class="fa fa-plus" aria-hidden="true"></i> Your Bookmarks </h3>
-      <li class = "bookmark"> Website 1  <!--<%- "m.title" %>-->
-        <ul class = "bookmarkList">
-          <li class = " bookmarkDescriptions"> title   </li> <!--<%- "m.title" %>-->
-          <li class = " bookmarkDescriptions"> URL </li> <!--<%- "m.URL" %>-->
-          <li class = " bookmarkDescriptions"> description </li> <!--<%- "m.description" %>-->
-        </ul>
-      </li>
-      <li class = "bookmark"> Website 2  <!--<%- "m.title" %>-->
-        <ul class = "bookmarkList">
-          <li class = " bookmarkDescriptions"> title   </li> <!--<%- "m.title" %>-->
-          <li class = " bookmarkDescriptions"> URL </li> <!--<%- "m.URL" %>-->
-          <li class = " bookmarkDescriptions"> description </li> <!--<%- "m.description" %>-->
-        </ul>
-      </li>
-          <li class = "bookmark"> Website 3  <!--<%- "m.title" %>-->
-            <ul class = "bookmarkList">
-              <li class = " bookmarkDescriptions"> title   </li> <!--<%- "m.title" %>-->
-              <li class = " bookmarkDescriptions"> URL </li> <!--<%- "m.URL" %>-->
-              <li class = " bookmarkDescriptions"> description </li> <!--<%- "m.description" %>-->
-            </ul>
-          </li>
-     </li>
-   </div>
- </script>
 
 
-<!--SEQUENCE 3 - RECOMMENDATIONS ACCORDION -->
+<!------------------------------------------------------------->
+<!--                    Bookmark input areas          --------->
+  <div class='bookmark-area'>
 
+    <!-- <div class="container-1"> -->
 
-  <div class = "listBookmarks">
-    <ul class = "userBookmarks"><h3 class = "listHead"><i class="fa fa-plus" aria-hidden="true"></i> Recommendations </h3>
+      <form class="user-form">Title
+        <input name="slink-login" type="text" id="user-form"
+        placeholder="Enter User Name">
+      </form>
 
-      <!--Make a span for clickable text?? How do we not interact with call functionality??-->
+        <h3 class="Bookmark-choices" id="tada">
 
+          <i class="fa fa-arrow-right" aria-hidden="true" id="one"></i>
+          <i class="fa fa-arrow-down hide-down-arrow" aria-hidden="true"></i>BookMarks</h3>
+            <div class ="accordion-panel" id = "1">
 
-<!-- SEQUENCE 4.A - RECOMMENDATION MODAL -->
+              <ul class= "Lists">
+                <li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>title
+                    <!-- <input name="title" type="text" id="this1" placeholder="choice"></li> -->
 
+                <li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>url
+                    <!-- <input name="url" type="text" id="this2" placeholder="address"></li> -->
 
-    <script id= "recommend-bookmark" type = "text/html">
-      <div id = "recommendModal">
-        <li class = "recBookmarks">Make recommendations</li>
-          <div class = "modal-container">
-            <button class = "close"> X </button>
-            <div class = "modal">
-              <ul class = "modalText">
-                <li class = "recForm>"<form class = "recName"><input text> Recommend for </input></form><li>
-                <li class = "recForm>"<form class = "urecURL"><input text> Recommend URL </input></form><li>
+                <li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>descriptions
+                    <!-- <input name="description" type="text" id="this3" placeholder="description"></li> -->
               </ul>
-              <button class = "submit"> share </button>
             </div>
-          </div>
+
+<!--------------------------------------------------------------------------------->
+          <!-- <div class="container-2"> -->
+
+            <h3 class="Bookmark-choices" id="tada">
+
+              <i class="fa fa-arrow-right" aria-hidden="true" id="one"></i>
+              <i class="fa fa-arrow-down hide-down-arrow" aria-hidden="true"></i></h3>
+                <div class ="accordion-panel" id = "1">
+
+                  <ul class= "Lists">
+                    <li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>title</li>
+                        <!-- <input name="title" type="text" id="this1" placeholder="choice"></li> -->
+
+                    <li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>url</li>
+                        <!-- <input name="url" type="text" id="this2" placeholder="address"></li> -->
+
+                    <li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>descriptions</li>
+                        <!-- <input name="description" type="text" id="this3" placeholder="description"></li> -->
+                  </ul>
+                </div>
+
+
+<!-------------------------------------------------------------------------------->
+
+
+  <!-- <div class="container-3"> -->
+
+  <h3 class="Bookmark-choices" id="tada">
+
+    <i class="fa fa-arrow-right" aria-hidden="true" id="one"></i>
+    <i class="fa fa-arrow-down hide-down-arrow" aria-hidden="true"></i></h3>
+      <div class ="accordion-panel" id = "1">
+
+          <ul class= "Lists">
+            <li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>title</li>
+                <!-- <input name="title" type="text" id="this1" placeholder="choice"></li> -->
+
+            <li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>url</li>
+                <!-- <input name="url" type="text" id="this2" placeholder="address"></li> -->
+
+            <li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>descriptions</li>
+                <!-- <input name="description" type="text" id="this3" placeholder="description"></li> -->
+          </ul>
+        </div>
       </div>
-    </script>
-
-      <!--Also, pertaining to li's, which word do we need to invoke function?-->
 
 
-  	<!-- REQUESTS Do we need to have separate scripts for each request? Guessing yes, but do not know yet. -->
-
-  <script src = "assets/js/slink.js"></script>
 
 
-      </div> <!--End .listBookmarks -->
-    </div> <!--End .mainWrap -->
+<!----------------------------------------------------------------------------->
+
+<!--              RECOMMENDATIONS    ----------------------------->
+<!-- <div class="Recommendations"> -->
+
+<div class="Recommendations-area">
+
+
+<h3 class="Section-A" id="tada-A">
+
+<i class="fa fa-arrow-right" aria-hidden="true" id="one"></i>
+<i class="fa fa-arrow-down hide-down-arrow" aria-hidden="true"></i>Recommendations</h3>
+  <div class ="accordion-panel-A" id = "A">
+
+      <ul class= "Rec-lists">
+
+        <li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+          <h1>Make Recommendations</h1>
+          <div class="modal-container">
+          <div class="modal">
+            <button class="model-close">x</button>
+          </div>
+        </div>
+    </ul>
+
+
+      <!-- <button class="btn">click on</button> -->
+</div>
+
+<h3 class="Section-A" id="tada-A">
+
+<i class="fa fa-arrow-right" aria-hidden="true" id="one"></i>
+<i class="fa fa-arrow-down hide-down-arrow" aria-hidden="true"></i>Recommendations</h3>
+  <div class ="accordion-panel-A" id = "A">
+
+      <ul class= "Rec-lists">
+
+        <li><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+          <h1>Get Recommendations</h1>
+          <div class="modal-container">
+          <div class="modal">
+            <button class="model-close">x</button>
+          </div>
+        </div>
+    </ul>
+
+
+      <!-- <button class="btn">click on</button> -->
+  </div>
+
+
+
+
+      </div>
+    </div>
+    <script src="assets/js/slink.js"></script>
   </body>
 </html>

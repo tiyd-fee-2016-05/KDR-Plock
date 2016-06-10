@@ -1,4 +1,4 @@
-* {
+/** {
     box-sizing: border-box;
 }
 
@@ -28,8 +28,8 @@ img{
 }
 
 .boxLogin{
-  padding: 2px 4px 2px 4px;
-  margin: auto;
+  padding: 2px 4px 2px 4px;/*  RG  */
+  /*margin: auto;
   display:inline-block;
   border: solid 1px #D5D5D5;
 }
@@ -71,4 +71,184 @@ img{
   color: white;
   border: none;
   outline-style: none;
+}*/
+
+
+
+
+/**************************************************************/
+/**                   RHONDA                              **/
+/*body{
+  margin: 100%;
+  display: block;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  background-color: lightblue;
+}*/
+
+.container{
+  box-sizing: border-box;
+  margin:4% 11% 4% 25%;
+  font-size: 4em;
 }
+
+form{
+  margin: 0em 0em 0em 6em;
+}
+
+
+.bookmark-area{
+  margin: 2em 0em 0em 3em;
+}
+
+
+
+.accordion-panel{
+  display: none;
+}
+
+
+.fa.fa-arrow-right{
+  font-style: normal;
+  font-size: 0.5em;
+  font-weight: normal;
+	font-variant: inherit;
+  /*line-height: 0.5;*/
+  padding-right: 10px;
+  /*transition-delay:  1s;*/
+  cursor: pointer;
+}
+
+.Bookmark-choices{
+  margin: 0 0 0.3em;
+	padding: 1em 0 0.5em;
+  color: #47a3da;
+	border-bottom: 1px solid #ddd;
+	font-size: 1em;
+	font-weight: 300;
+  font-style: normal;
+  cursor: pointer;
+}
+
+h3:hover>i{
+  transform: rotateZ(45deg);
+  color: #569ed2;
+}
+
+
+  .hide-right-arrow{
+    display: none;
+  }
+
+
+  .hide-down-arrow{
+    display: none;
+  }
+
+  .show-down-arrow{/**  JS class **/
+    display:inline;
+  }
+
+
+
+
+
+
+
+/***********************************************/
+/**      GOING TO WORK ON MODAL FOR THIS AREA  */
+  .Recommendations-area{
+    margin: 2em 0em 0em 3em;
+  }
+
+  .Section-A{
+    margin: 0 0 0.3em;
+    padding: 1em 0 0.5em;
+    color: #47a3da;
+    border-bottom: 1px solid #ddd;
+    font-size: 1em;
+    font-weight: 300;
+    font-style: normal;
+    cursor: pointer;
+  }
+
+  .accordion-panel-A{
+    display: none;
+  }
+
+
+  .modal-container {
+  position: fixed;
+  top: 20px;/**** THIS MAKES 100% WIDTH AND HEIGHT    ****/
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+
+.modal-container.showing {
+  display: block;
+
+}
+
+.modal {
+  position: fixed;
+  top: 1em;/**   WIDTH AND HEIGHT STYLING  **/
+  left: 1em;
+  bottom: 1em;
+  right: 1em;
+  background: white;
+  border: 1px solid #AAA;
+  /*padding: 1em;*/
+  border-radius: 3px;
+}
+
+.modal-close{
+margin: 0% 0% ;
+}
+
+h1{
+  font-size: 50px;
+}
+
+.btn{
+  margin-left:
+}
+
+
+
+
+
+/*ul{
+
+  margin-left: 1.5em;
+}*/
+
+
+
+
+
+
+
+  .fa.fa-arrow-circle-o-right{
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  color: #ddd;
+  padding-right: 10px;
+}
+
+.visible{
+display: block;
+}
+
+
+
+
+
+
+  .fa{
+    padding-right: 10px;
+    color: #C9DCDF;
+  }
