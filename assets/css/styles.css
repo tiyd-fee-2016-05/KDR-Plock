@@ -1,0 +1,51 @@
+.savedbook {
+  /*border: 1px solid black;*/
+  font-family: Helvetica;
+  letter-spacing: .5px;
+  padding: 2.5px;
+  width: 40%;
+  margin-left: 20px;
+}
+
+.user-form {
+  padding: 10px;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 12px;
+}
+
+ .listname {
+  font-weight: bold;
+}
+
+.addbook {
+  display: none;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+h3 {
+  padding-left: 20px;
+  padding-top: 20px;
+  font-family: Helvetica;
+  display: none;
+  color: darkgrey;
+}
+
+.searchform {
+  height: 15px;
+}
+
+.info {
+  list-style: none;
+  line-height: 1.5;
+}
+
+h1 {
+  text-align: center;
+  color: darkgrey;
+  font-family: Helvetica;
+  border-bottom: 2px solid darkgrey;
+  padding: 5px 5px 10px 5px;
+  margin-top: 5px;
+}
