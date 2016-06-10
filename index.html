@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Slink</title>
+    <link rel= "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.js"></script> <!-- Do we need lodash? -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel = "stylesheet" href = "styles.css">
+  </head>
+  <body>
+  <img src = "http://imgur.com/WfPHd0g" alt ="logo"></img>
+
+
+  <div class="contentWrapper">
+
+  <!--SEQUENCE 1 - LOGIN BOX-->
+
+    <div class = "boxLogin">
+      <div class = "headLoginBox"> SLINK </div>
+      <form id = "usernameLogin"><input text> username</input></form>
+      <form id = "passwordLogin"><input text> password</input></form>
+      <div>
+        <button class = "submit"> submit </button>
+      </div>
+    </div>
+
+<!-- SEQUENCE 2 - USER BOOKMARKS -->
+
+  <div class = "seeBookmarksList">
+  </div>
+
+  <script id= "see_bookmark" type = "text/html">
+
+  <div class = "listBookmarks">
+    <ul class = "userBookmarks"><h3 class = "listHead"><i class="fa fa-plus" aria-hidden="true"></i> Your Bookmarks </h3>
+      <li class = "bookmark"> Website 1  <!--<%- "m.title" %>-->
+        <ul class = "bookmarkList">
+          <li class = " bookmarkDescriptions"> title   </li> <!--<%- "m.title" %>-->
+          <li class = " bookmarkDescriptions"> URL </li> <!--<%- "m.URL" %>-->
+          <li class = " bookmarkDescriptions"> description </li> <!--<%- "m.description" %>-->
+        </ul>
+      </li>
+      <li class = "bookmark"> Website 2  <!--<%- "m.title" %>-->
+        <ul class = "bookmarkList">
+          <li class = " bookmarkDescriptions"> title   </li> <!--<%- "m.title" %>-->
+          <li class = " bookmarkDescriptions"> URL </li> <!--<%- "m.URL" %>-->
+          <li class = " bookmarkDescriptions"> description </li> <!--<%- "m.description" %>-->
+        </ul>
+      </li>
+          <li class = "bookmark"> Website 3  <!--<%- "m.title" %>-->
+            <ul class = "bookmarkList">
+              <li class = " bookmarkDescriptions"> title   </li> <!--<%- "m.title" %>-->
+              <li class = " bookmarkDescriptions"> URL </li> <!--<%- "m.URL" %>-->
+              <li class = " bookmarkDescriptions"> description </li> <!--<%- "m.description" %>-->
+            </ul>
+          </li>
+     </li>
+   </div>
+
+ </script>
+
+<!--SEQUENCE 3 - RECOMMENDATIONS ACCORDION -->
+
+  <div class = "listBookmarks">
+    <ul class = "userBookmarks"><h3 class = "listHead"><i class="fa fa-plus" aria-hidden="true"></i> Recommendations </h3>
+
+      <!--Make a span for clickable text?? How do we not interact with call functionality??-->
+
+<!-- SEQUENCE 4.A - RECOMMENDATION MODAL -->
+
+    <script id= "recommend-bookmark" type = "text/html">
+
+      <div id = "recommendModal">
+        <li class = "recBookmarks">Make recommendations</li>
+          <div class = "modal-container">
+            <button class = "close"> X </button>
+            <div class = "modal">
+              <ul class = "modalText">
+                <li class = "recForm>"<form class = "recName"><input text> Recommend for </input></form><li>
+                <li class = "recForm>"<form class = "urecURL"><input text> Recommend URL </input></form><li>
+              </ul>
+              <button class = "submit"> share </button>
+            </div>
+          </div>
+      </div>
+
+    </script>
+
+      <!--Also, pertaining to li's, which word do we need to invoke function?-->
+
+
+  	<!-- REQUESTS Do we need to have separate scripts for each request? Guessing yes, but do not know yet. -->
+
+  <script src = "slink.js"></script>
+
+  </body>
+</html>
