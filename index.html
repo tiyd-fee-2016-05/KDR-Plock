@@ -12,19 +12,24 @@
   </head>
   <body>
     <div class="mainWrap">
+      <div id = "logo">
         <img src = "slink-logo.png" alt ="logo"></img>
+      </div>
 
 
 
   <!--SEQUENCE 1 - LOGIN BOX-->
 
-<div class = "headLoginBox">
+<div wrapper id= "headLoginBox">
     <div class = "boxLogin">
-      <h3 class = "title"> SLINK </h3>
+      <h3 class = "siteName"> SLINK </h3>
       <input id = "usernameLogin" placeholder = "username"></input>
       <input id = "passwordLogin" placeholder = "password"></input>
-      <button class = "submit"> submit </button>
+      <div>
+        <button id = "confirm"> submit </button>
+      </div>
     </div>
+  </div>
 
 
 <!-- SEQUENCE 2 - USER BOOKMARKS -->
@@ -36,15 +41,16 @@
   <script id= "see_bookmark" type = "text/html">
 
   <div class = "listBookmarks">
+    <button class = "newBookmark"> + </button>
     <ul class = "userBookmarks"><h3 class = "listHead"><i class="fa fa-plus" aria-hidden="true"></i> Your Bookmarks </h3>
-      <li class = "bookmark"> Website 1  <!--<%- "m.title" %>-->
+      <li class = "bookmark"> Website 1
         <ul class = "bookmarkList">
-          <li class = " bookmarkDescriptions"> title   </li> <!--<%- "m.title" %>-->
-          <li class = " bookmarkDescriptions"> URL </li> <!--<%- "m.URL" %>-->
-          <li class = " bookmarkDescriptions"> description </li> <!--<%- "m.description" %>-->
+          <li class = " bookmarkDescriptions"> title   </li>
+          <li class = " bookmarkDescriptions"> URL </li>
+          <li class = " bookmarkDescriptions"> description </li>
         </ul>
       </li>
-      <li class = "bookmark"> Website 2  <!--<%- "m.title" %>-->
+      <li class = "bookmark"> Website 2
         <ul class = "bookmarkList">
           <li class = " bookmarkDescriptions"> title   </li> <!--<%- "m.title" %>-->
           <li class = " bookmarkDescriptions"> URL </li> <!--<%- "m.URL" %>-->
@@ -62,6 +68,15 @@
    </div>
 
  </script>
+
+ <!--SEQUENCE 2.A - ADD BOOKMARKS -->
+
+    <div wrapper id = "addBookmarkModal">
+      <span><input id = "enterBookMarkTitle" placeholder = "title"></input></span>
+      <span><input id = "enterBookmarkURL" placeholder = "URL"></input></span>
+      <span><form id = "enterBookmarkDescription" placeholder = "description"></form></span>
+      <button id = "addBookmarkSubmit"> add bookmark </button>
+    </div>
 
 
 <!--SEQUENCE 3 - RECOMMENDATIONS ACCORDION -->
