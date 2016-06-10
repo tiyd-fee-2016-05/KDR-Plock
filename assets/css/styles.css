@@ -178,11 +178,11 @@ h3:hover>i{
 
   .modal-container {
   position: fixed;
-  top: 20px;/**** THIS MAKES 100% WIDTH AND HEIGHT    ****/
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
-  background: rgba(0, 0, 0, 0.6);
+  top: 19em;/**** THIS MAKES 100% WIDTH AND HEIGHT    ****/
+  left: 12em;
+  right: 10em;
+  bottom: 12em;
+  background: lightblue;
   display: none;
 }
 
@@ -193,27 +193,52 @@ h3:hover>i{
 
 .modal {
   position: fixed;
-  top: 1em;/**   WIDTH AND HEIGHT STYLING  **/
-  left: 1em;
+  margin-top: 12em;/**   WIDTH AND HEIGHT STYLING  **/
+  margin-left: 6em;
   bottom: 1em;
   right: 1em;
   background: white;
-  border: 1px solid #AAA;
+  /*border: 1px solid #AAA;*/
   /*padding: 1em;*/
   border-radius: 3px;
 }
 
 .modal-close{
-margin: 0% 0% ;
+margin: 0% 0%;
 }
 
-h1{
-  font-size: 50px;
+h1 .make-recommendations{
+  font-size: 10px;
+  cursor: pointer;
 }
 
-.btn{
+h1 .get-recommendations{
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.primary-button{
+  position:fixed;
+}
+
+.seconday-button{
+  position: fixed;
+}
+
+button{
+  margin: 0em 13em 16em 0em;
+  background: white;
+}
+
+.modal input{
+  padding: 2em 0em 4em 6em;
+}
+
+
+
+/*.btn{
   margin-left:
-}
+}*/
 
 
 
