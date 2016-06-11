@@ -1,123 +1,141 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>Slink</title>
-    <link rel= "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.js"></script> <!-- Do we need lodash? -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.js"></script>
+    <!-- Do we need lodash? -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <link rel = "stylesheet" href = "assets/css/styles.css">
-  </head>
-  <body>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+  <!-- LOGO WITH WRAPPER FOR ENTIRE PAGE -->
+
     <div class="mainWrap">
-      <div id = "logo">
-        <img src = "slink-logo.png" alt ="logo"></img>
-      </div>
+        <div id="logo">
+            <img src="slink-logo.png" alt="logo"></img>
+        </div>
+
+        <!--SEQUENCE 1 - LOGIN BOX-->
+        <!--Sign in button viewable and clickable upon loading page-->
+        <button class="signin">sign in</button>
+
+        <!--Modal pops up when signin has been clicked-->
+        <div class="login-modal">
+            <div class="login-container">
+              <div class = "siteName"> SLINK </div>
+                <div><input id = "username-login" placeholder = "username"></input></div>
+                <div><input id = "password-login" placeholder = "password"></input></div>
+                <div>
+                    <button class="confirm"> submit </button>
+
+        <!--When inputs have been submitted from menu, go to SEQ 2, load saved books -->
+                </div>
+            </div>
+        </div>
 
 
-
-  <!--SEQUENCE 1 - LOGIN BOX-->
-
-<div wrapper id= "headLoginBox">
-    <div class = "boxLogin">
-      <h3 class = "siteName"> SLINK </h3>
-      <input id = "usernameLogin" placeholder = "username"></input>
-      <input id = "passwordLogin" placeholder = "password"></input>
-      <div>
-        <button id = "confirm"> submit </button>
-      </div>
-    </div>
-  </div>
+        <!-- SEQUENCE 2 - USER BOOKMARKS -->
 
 
-<!-- SEQUENCE 2 - USER BOOKMARKS -->
+        <div class="seeBookmarksList">
+        </div>
 
+        <script id="see_bookmark" type="text/html">
 
-  <div class = "seeBookmarksList">
-  </div>
+            <div class="listBookmarks">
+                <button class="newBookmark"> + </button>
+                <ul class="userBookmarks">
+                    <h3 class="listHead"><i class="fa fa-plus" aria-hidden="true"></i> Your Bookmarks </h3>
+                    <li class="bookmark"> Website 1
+                        <ul class="bookmarkList">
+                            <li class=" bookmarkDescriptions"> title </li>
+                            <li class=" bookmarkDescriptions"> URL </li>
+                            <li class=" bookmarkDescriptions"> description </li>
+                        </ul>
+                    </li>
+                    <li class="bookmark"> Website 2
+                        <ul class="bookmarkList">
+                            <li class=" bookmarkDescriptions"> title </li>
+                            <li class=" bookmarkDescriptions"> URL </li>
+                            <li class=" bookmarkDescriptions"> description </li>
+                        </ul>
+                    </li>
+                    <li class="bookmark"> Website 3
+                        <ul class="bookmarkList">
+                            <li class=" bookmarkDescriptions"> title </li>
+                            <li class=" bookmarkDescriptions"> URL </li>
+                            <li class=" bookmarkDescriptions"> description </li>
+                        </ul>
+                    </li>
+                    </li>
+            </div>
 
-  <script id= "see_bookmark" type = "text/html">
+        </script>
 
-  <div class = "listBookmarks">
-    <button class = "newBookmark"> + </button>
-    <ul class = "userBookmarks"><h3 class = "listHead"><i class="fa fa-plus" aria-hidden="true"></i> Your Bookmarks </h3>
-      <li class = "bookmark"> Website 1
-        <ul class = "bookmarkList">
-          <li class = " bookmarkDescriptions"> title   </li>
-          <li class = " bookmarkDescriptions"> URL </li>
-          <li class = " bookmarkDescriptions"> description </li>
-        </ul>
-      </li>
-      <li class = "bookmark"> Website 2
-        <ul class = "bookmarkList">
-          <li class = " bookmarkDescriptions"> title   </li> <!--<%- "m.title" %>-->
-          <li class = " bookmarkDescriptions"> URL </li> <!--<%- "m.URL" %>-->
-          <li class = " bookmarkDescriptions"> description </li> <!--<%- "m.description" %>-->
-        </ul>
-      </li>
-          <li class = "bookmark"> Website 3  <!--<%- "m.title" %>-->
-            <ul class = "bookmarkList">
-              <li class = " bookmarkDescriptions"> title   </li> <!--<%- "m.title" %>-->
-              <li class = " bookmarkDescriptions"> URL </li> <!--<%- "m.URL" %>-->
-              <li class = " bookmarkDescriptions"> description </li> <!--<%- "m.description" %>-->
-            </ul>
-          </li>
-     </li>
-   </div>
+        <!--SEQUENCE 2.A - ADD BOOKMARKS -->
 
- </script>
-
- <!--SEQUENCE 2.A - ADD BOOKMARKS -->
-
-    <div wrapper id = "addBookmarkModal">
+        <!-- <div wrapper id = "addBookmarkModal">
       <span><input id = "enterBookMarkTitle" placeholder = "title"></input></span>
       <span><input id = "enterBookmarkURL" placeholder = "URL"></input></span>
       <span><form id = "enterBookmarkDescription" placeholder = "description"></form></span>
       <button id = "addBookmarkSubmit"> add bookmark </button>
-    </div>
+    </div> -->
 
 
-<!--SEQUENCE 3 - RECOMMENDATIONS ACCORDION -->
+        <!--SEQUENCE 3 - RECOMMENDATIONS ACCORDION -->
 
 
-  <div class = "listBookmarks">
-    <ul class = "userBookmarks"><h3 class = "listHead"><i class="fa fa-plus" aria-hidden="true"></i> Recommendations </h3>
+        <!-- <div class = "listBookmarks">
+    <ul class = "userBookmarks"><h3 class = "listHead"><i class="fa fa-plus" aria-hidden="true"></i> Recommendations </h3> -->
 
-      <!--Make a span for clickable text?? How do we not interact with call functionality??-->
-
-
-<!-- SEQUENCE 4.A - RECOMMENDATION MODAL -->
+        <!--Make a span for clickable text?? How do we not interact with call functionality??-->
 
 
-    <script id= "recommend-bookmark" type = "text/html">
+        <!-- SEQUENCE 4.A - RECOMMENDATION MODAL -->
 
-      <div id = "recommendModal">
-        <li class = "recBookmarks">Make recommendations</li>
-          <div class = "modal-container">
-            <button class = "close"> X </button>
-            <div class = "modal">
-              <ul class = "modalText">
-                <li class = "recForm>"<form class = "recName"><input text> Recommend for </input></form><li>
-                <li class = "recForm>"<form class = "urecURL"><input text> Recommend URL </input></form><li>
-              </ul>
-              <button class = "submit"> share </button>
+
+        <script id="recommend-bookmark" type="text/html">
+
+            <div id="recommendModal">
+                <li class="recBookmarks">Make recommendations</li>
+                <div class="modal-container">
+                    <button class="close"> X </button>
+                    <div class="modal">
+                        <ul class="modalText">
+                            <li class="recForm>" <form class="recName">
+                                <input text> Recommend for </input>
+                                </form>
+                                <li>
+                                    <li class="recForm>" <form class="urecURL">
+                                        <input text> Recommend URL </input>
+                                        </form>
+                                        <li>
+                        </ul>
+                        <button class="submit"> share </button>
+                    </div>
+                </div>
             </div>
-          </div>
-      </div>
 
-    </script>
+        </script>
 
-      <!--Also, pertaining to li's, which word do we need to invoke function?-->
+        <!--Also, pertaining to li's, which word do we need to invoke function?-->
 
 
-  	<!-- REQUESTS Do we need to have separate scripts for each request? Guessing yes, but do not know yet. -->
-
-  <script src = "assets/js/slink.js"></script>
+        <!-- REQUESTS Do we need to have separate scripts for each request? Guessing yes, but do not know yet. -->
 
 
-      </div> <!--End .listBookmarks -->
-    </div> <!--End .mainWrap -->
-  </body>
+    </div>
+    <!--End .listBookmarks -->
+    </div>
+    <!--End .mainWrap -->
+    <script type="text/javascript" src="assets/js/slink.js"></script>
+</body>
+
 </html>

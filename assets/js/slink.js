@@ -1,15 +1,31 @@
-$(function(){
-  'use strict';
-});
+
 
 var x = 1;
 console.log(x);
 
-//User Login --> Show Bookmarks
+// RHONDA'S MODAL FUNCTION//
+
+$('.signin').on("click", function () {
+$('.login-container , .confirm').addClass('showing');
+
+console.log('sign in clicked');
+
+});
+
+$('.confirm').on("click", function () {
+  $('.login-container , .confirm , .signin').removeClass('showing');
+  $('.signin').css('display', 'none')
+console.log('login submitted');
+
+});
+
+
+
+//USER LOGIN (LEADS TO SHOW BOOKMARKS)
 
 function jSONson() {
   $.ajax({
-    url: "http://localhost:3000/0",
+    url: "https://slink.herokuapp.com/",
     dataType: "JSON",
     method: 'GET',
     success: function(data)
@@ -25,25 +41,27 @@ function jSONson() {
     }
     // success: successFunction
   });
+}
   console.log("Something works");
 
 
-//Save Bookmarks (function for a POST call)
+//SAVE BOOKMARKS ('POST' REQUEST)
 //While this appears to be really standard jQuery ajax call, this was found as a response on a Stack Overflow question by user 'Roger' on http://stackoverflow.com/questions/15308017/save-data-through-ajax-jquery-post-with-form-submit//
 
 // $(function savePostCall(){
 // $.ajax({
-//   type: 'POST'
-//   dataType: 'JSON.stringify({})'
-//   url: "http://localhost:3000/0",
+//   type: 'POST',
+//   dataType: 'json',
+//   url: "https://slink.herokuapp.com/link",
 //   success: function(data){
-//   }
+//     }
+//   });
 //
-//   console.log('save bookmark called')
+//   console.log('save bookmark called');
 //
-// )};
+// });
 
-//Function for addBookmark Modal
+//FUNCTION FOR ADD BOOKMARK MODAL
 
   $('.newBookmark').click(function(){
   $('.addBookmarkWrapper').addClass('showing');
@@ -52,26 +70,30 @@ function jSONson() {
 
 });
 
-//Function for when addBookmark modal forms are complete
+//FUNCTION FOR WHEN ADDBOOKMARK FORMS ARE COMPLETE
 
 $('#addBookmarkSubmit').click(function(e){
+
   e.preventDefault();
-  $('.addBookmarkWrapper').removeClass('showing');
+  $('.addBookmarkWrapper').css('dispaly : inline-block');
   $('.savedBookmarks').append('.newBookmark');
+
   $(function savePostCall(){
-  $.ajax({
-    type: 'POST'
-    data: 'JSON.stringify'
-    url: "http://localhost:3000/0",
-    success: function(data){
-    }
+    $.ajax({
+      type: 'POST',
+      dataType: 'json',
+      // data: JSON.stringify ({ 'title'})
+      url: "https://slink.herokuapp.com/link",
+      beforeSend: function (xhr) {
+      xhr.setRequestHeader('Authorization', 'person1');
+    },
+     }).done(function(data){
 
-    console.log('save bookmark called')
-    console.log('ajax called, new bookmark submitted successfully');
-}
+      console.log('save bookmark called');
+      console.log('ajax called, new bookmark submitted successfully');
+    });
+  });
 });
-
-
 
 
 //See Bookmarks

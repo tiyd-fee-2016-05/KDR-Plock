@@ -14,28 +14,38 @@ margin: auto;
 
 }
 
+/* LOGO */
+
 img{
   margin: 5em;
   width: 100px;
   height: 100px;
 }
 
-#headLoginBox{
-  visibility: visible;
+/* USER LOGIN MODAL */
+.signin{
+  display: block;
+  letter-spacing: 1.5px;
+  margin-top: 25px;
+  width: 200px;
+  height:25px;
   text-align: center;
+  background-color: #D5D5D5;
+  color: white;
+  border: none;
+  outline-style: none;
 }
 
-.boxLogin{
-  visibility: visible;
-  margin: auto;
-  display:inline-block;
+.login-container.showing{
+  display: block;
+}
+
+.login-container{
+  display: none;
   border: solid 1px #D5D5D5;
 }
 
-
-
-.siteName{
-  visibility: visible;
+  .siteName{
   font-family: Source Sans Pro;
   color: white;
   letter-spacing: 10px;
@@ -47,7 +57,52 @@ img{
   background: #D5D5D5;
 }
 
-/* User Login Modal */
+#username-login{
+  letter-spacing: 1.5px;
+  display: block;
+  text-align: center;
+  margin: 0 20px 0 30px;
+}
+
+#password-login{
+  visibility: visible;
+  letter-spacing: 1.5px;
+  display: block;
+  text-align: center;
+  margin: 0 20px 0 30px;
+}
+
+.confirm{
+  display: none;
+}
+
+.confirm.showing{
+  display: block;
+  letter-spacing: 1.5px;
+  margin-top: 25px;
+  width: 200px;
+  height:25px;
+  text-align: center;
+  background-color: #D5D5D5;
+  color: white;
+  border: none;
+  outline-style: none;
+}
+
+
+/* Add Bookmark Modal */
+
+#addBookmarkModal{
+  visibility: hidden
+}
+
+#addBookmarkModal.showing{
+  visibility: visible;
+  width: 400px;
+  height: 400px;
+  border: solid 1px #D5D5D5;
+}
+
 
 #usernameLogin{
   visibility: visible;
@@ -64,27 +119,4 @@ img{
   display: block;
   text-align: center;
   margin: 0 20px 0 30px;
-}
-
-#confirm{
-  letter-spacing: 1.5px;
-  margin-top: 25px;
-  width: 200px;
-  height:25px;
-  text-align: center;
-  background-color: #D5D5D5;
-  color: white;
-  border: none;
-  outline-style: none;
-}
-
-#addBookmarkModal{
-  visibility: hidden
-}
-
-#addBookmarkModal.showing{
-  visibility: visible;
-  width: 400px;
-  height: 400px;
-  border: solid 1px #D5D5D5;
 }
