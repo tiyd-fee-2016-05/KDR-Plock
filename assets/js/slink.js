@@ -12,7 +12,7 @@ $(function() {
     // Assuming username and password are defined somewhere as strings
     // btoa is a built-in function that converts a string to base64
 
-    // var base64Credentials = btoa(""); // add username or created_by as argument // need password?
+    // var base64Credentials = btoa('created_by'); // add username or created_by as argument // need password?
 
     // setRequestHeader is a method of the DOM's AJAX object (XMLHttpRequest)
     // it allows us to set HTTP headers. These are key/value pairs that
@@ -26,11 +26,20 @@ $(function() {
       console.log(data);
       // $('.bookmark1').append("Bookmark:");
       //  var jsonstring = JSON.parse(data);
-      $('.infoTitle').append("Title: ");
-      $('.infoDesc').append("Description: " + data.description);
-      $('.infoURL').append("URL: " + data.URL);
-      $('.infoBy').append("Created by: " + data.created_by);
-      $('.infoAt').append("Created at: " + data.created_at);
+      // var jsonArray = $.makeArray(data);
+      // var jsonArray = $.map(data, function)
+      for (var i =0; i < data.length; i++) {
+        var titleSave = (data[i].title);
+        var descSave = (data[i].description);
+        var urlSave = (data[i].URL);
+        var bySave = (data[i].created_by);
+        var atSave = (data[i].created_at);
+      };
+      $('.infoTitle').append("Title: " + titleSave);
+      $('.infoDesc').append("Description: " + descSave);
+      $('.infoURL').append("URL: " + urlSave);
+      $('.infoBy').append("Created by: " + bySave);
+      $('.infoAt').append("Created at: " + atSave);
     });
 
 
