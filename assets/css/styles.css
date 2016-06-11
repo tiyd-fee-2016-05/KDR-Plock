@@ -85,7 +85,11 @@ img{
   background-color: lightblue;
 }*/
 
-.container{
+.main-container{
+
+}
+
+.header-container{
   box-sizing: border-box;
   margin:4% 11% 4% 25%;
   font-size: 4em;
@@ -191,6 +195,8 @@ h3:hover>i{
 
 }
 
+
+
 .modal {
   position: fixed;
   margin-top: 12em;/**   WIDTH AND HEIGHT STYLING  **/
@@ -203,16 +209,17 @@ h3:hover>i{
   border-radius: 3px;
 }
 
-.modal-close{
+#modal-close{
 margin: 0% 0%;
+
 }
 
-h1 .make-recommendations{
+ .make-recommendations{
   font-size: 10px;
   cursor: pointer;
 }
 
-h1 .get-recommendations{
+ .get-recommendations{
   font-size: 10px;
   cursor: pointer;
 }
@@ -225,20 +232,28 @@ h1 .get-recommendations{
   position: fixed;
 }
 
-button{
+/*button{
   margin: 0em 13em 16em 0em;
   background: white;
-}
+}*/
 
-.modal input{
+/*.modal input{
   padding: 2em 0em 4em 6em;
-}
+}*/
 
 
 
 /*.btn{
   margin-left:
 }*/
+
+ #add{
+  display: block;
+}
+
+#get{
+  display: block;
+}
 
 
 

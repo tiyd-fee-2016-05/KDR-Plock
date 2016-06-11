@@ -163,16 +163,19 @@ $(".Bookmark-choices").click(function(){
   });
 
 
-////////////       MODAL                
+////////////       MODAL
     $('h1').on("click", function () {//when you click on the btn the modal pops up//
-        $(this).text('Make-Recommendations');//when you click on the btn the text changes to Hi//
+        $(this).text("recommendations");//when you click on the btn the text changes to Hi//
 
     $('.modal-container').addClass('showing');
 
-    $('.modal-close, .modal-container').on('click', function () {//when you click on the X the modal container disappears//
+    console.log("yes");
+});
+    $('#modal-close').on('click', function () {
+      //when you click on the X the modal container disappears//
       $('.modal-container').removeClass('showing');
-    });
-    // $('.modal').click(function (e) // stops the modal container from appearing after it's closed//
-    //   e.stopPropagation();
-
+    console.log("no");
+//     $('.modal').click(function (e) // stops the modal container from appearing after it's closed//
+//       e.stopPropagation();
+// });
 });
