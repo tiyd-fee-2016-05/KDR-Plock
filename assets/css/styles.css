@@ -1,3 +1,7 @@
+#container {
+  font-family: helvetica;
+}
+
 .savedbook {
   /*border: 1px solid black;*/
   font-family: Helvetica;
@@ -20,8 +24,9 @@
 
 .secondary-btn {
   display: none;
-  margin-left: 10px;
-  padding: 5px;
+  margin: 10px;
+  padding: 3px 6px 6px 6px;
+  vertical-align: middle;
 }
 
 h3 {
@@ -52,6 +57,8 @@ h1 {
 
 #savedbookX {
   border-bottom: 0;
+  padding: 0;
+  margin: 0;
 }
 
 ul {
@@ -87,5 +94,12 @@ ul {
 }
 
 #modal-close {
-margin: 0% 0%;
+margin-right: 10px;
+padding: 3px 6px 6px 6px;
+text-align: right;
+float: right;
+}
+
+#submitbook {
+  margin-top: 10px;
 }

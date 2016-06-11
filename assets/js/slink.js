@@ -79,6 +79,7 @@ $(function() {
 
         $('.modal-container').addClass('showing');
 
+
         console.log("yes");
     });
     $('#modal-close').on('click', function() {
@@ -94,16 +95,25 @@ $(function() {
 
     ///// SAVE A BOOKMARK ///////
 
-    $('#addBookmarkSubmit').click(function(e) {
+    var savebooky = {
+      title:$('.titleAdd[class="titleAdd1"]').val(), //console.log below is pulling up just "" when it should pull value that you enter in when adding a bookmark
+      description:$('.descAdd').val(),
+      url:$('.URLAdd').val()
+    };
+
+
+    $('#submitbook').click(function(e) {
 
         e.preventDefault();
         $('.addBookmarkWrapper').removeClass('showing');
-        $('.savedBookmarks').append('.newBookmark');
+        $('.savedBookmarks').append('.newBookmark'); // to add that bookmark to existing saved bookmarks -- needs editing
+
 
         $(function savePostCall() {
             $.ajax({
                 type: 'POST',
                 dataType: 'json',
+                data: savebooky,
                 // data: JSON.stringify ({ 'title'})
                 url: "https://slink.herokuapp.com/link",
                 beforeSend: function(xhr) {
@@ -111,9 +121,12 @@ $(function() {
                 },
             }).done(function(data) {
 
+                titleAdd.value = " ";
                 console.log('save bookmark called');
-                console.log('ajax called, new bookmark submitted successfully');
+                // console.log('ajax called, new bookmark submitted successfully');
+
             });
+            console.log(savebooky);
         });
     });
 
