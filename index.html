@@ -11,31 +11,102 @@
 </head>
 
 <body>
- <div id="container">
-  <h1> SLINK </h1>
-    <form class="user-form">
-        <input name="slink-login" type="text" placeholder="Username" class="searchform">
-    </form>
+    <div id="container">
+        <h1> SLINK </h1>
+        <form class="user-form">
+            <input name="slink-login" type="text" placeholder="Username" class="searchform">
+        </form>
 
-      <h3>Saved Bookmarks</h3>
-      <form class="addbook">
-        <input name="slink-add" type="button" value="+">
-      </form>
-    <div class="savedbook">
+        <h3>Saved Bookmarks</h3>
 
-    <ul>
-        <!-- <li class="info"><span class="bookmark1"></span></li>
+        <button class="secondary-btn" data-toggle="modal" data-target="get-recommendations">
+            <h1 id="savedbookX">X</h1></button>
+        <div class="modal">
+
+            <div class="modal-container">
+                <button id="model-close"></button>
+                <p>GET RECOMMENDATIONS</p>
+                <input id="get" type="text" placeholder="Recommend for">
+                <input id="get" type="text" placeholder="Recommend Url">
+                <input id="get" type="text" placeholder="Description">
+                <input id="get" type="text" placeholder="Share">
+            </div>
+        </div>
+
+        <!-- <form class="addbook">
+            <input name="slink-add" type="button" value="+">
+        </form> -->
+
+<!--Start of Modal code-->
+        <!-- <div class="Recommendations-area">
+
+
+            <h3 class="Section-A" id="tada-A">
+
+                <i class="fa fa-arrow-right" aria-hidden="true" id="one"></i>
+                <i class="fa fa-arrow-down hide-down-arrow" aria-hidden="true"></i>Recommendations</h3>
+            <div class="accordion-panel-A" id="A">
+
+                <ul class="Rec-lists">
+                    <li> -->
+                        <!-- <button class="primary-btn" data-toggle="modal" data-target="make-recommendations"> -->
+                            <!-- <h1 id="addBookmark">Add a Bookmark</h1></button> -->
+                        <div class="modal">
+
+
+                            <div class="modal-container">
+                                <button id="model-close"></button>
+                                <p>Add Bookmark</p>
+                                <input id="get" type="text" placeholder="Recommend for">
+                                <input id="get" type="text" placeholder="Recommend Url">
+                                <input id="get" type="text" placeholder="Description">
+                                <input id="get" type="text" placeholder="Share">
+                            </div>
+                        </div>
+                    <!-- </li>
+
+
+                </ul> -->
+
+            </div>
+
+
+
+            <!-- <button class="btn">click on</button> -->
+
+
+
+
+            <!-- <h3 class="Section-A" id="tada-A">
+
+<i class="fa fa-arrow-right" aria-hidden="true" id="one"></i>
+<i class="fa fa-arrow-down hide-down-arrow" aria-hidden="true"></i></h3>
+            <div class="accordion-panel-A" id="A"> -->
+
+                <ul class="Rec-lists">
+                    <li>
+
+
+
+                    </li>
+                </ul>
+            </div>
+            <div class="savedbook">
+
+                <ul>
+                    <!-- <li class="info"><span class="bookmark1"></span></li>
         <br> -->
-        <li class="info"><span class="infoTitle"></span></li>
-        <li class="info"></span><span class="infoDesc"></span></li>
-        <li class="info"><span class="infoURL"></span></li>
-        <li class="info"><span class="infoBy"></span></li>
-        <li class="info"><span class="infoAt"></span></li>
-    </ul>
-  </div>
-    <script type="text/javascript" src="assets/js/slink.js"></script>
-  </div>
-</div>
+                    <li class="info"><span class="infoTitle"></span></li>
+                    <li class="info">
+                        </span><span class="infoDesc"></span></li>
+                    <li class="info"><span class="infoURL"></span></li>
+                    <li class="info"><span class="infoBy"></span></li>
+                    <li class="info"><span class="infoAt"></span></li>
+                </ul>
+            </div>
+            <script type="text/javascript" src="assets/js/slink.js"></script>
+        </div>
+    </div>
 </body>
 
 </html>
