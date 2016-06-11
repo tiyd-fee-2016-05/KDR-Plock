@@ -1,25 +1,25 @@
 [{
-  "title": "place.com"
-  "description": "website place for things and stuff"
-  "url": "https://place.com"
-  "created_by": "person1"
-  "created_at": "timestamp"
+  "title": "place.com",
+  "description": "website place for things and stuff",
+  "url": "https://place.com",
+  "created_by": "person1",
+  "created_at": "timestamp",
 
-  "title": "doingstuff.com"
-  "description": "website place where you can do cool things"
-  "url": "https://doingstuff.com"
-  "created_by": "catlady379"
-  "created_at": "timestamp"
+  "title": "doingstuff.com",
+  "description": "website place where you can do cool things",
+  "url": "https://doingstuff.com",
+  "created_by": "catlady379",
+  "created_at": "timestamp",
 
-  "title": "catpictures.com"
-  "description": "web home to the msot majestic creatures in the world"
-  "url": "https://catpictures.com"
-  "created_by": "person1"
-  "created_at": "timestamp"
+  "title": "catpictures.com",
+  "description": "web home to the msot majestic creatures in the world",
+  "url": "https://catpictures.com",
+  "created_by": "person1",
+  "created_at": "timestamp",
 
-  "title": "learntocode.com"
-  "description": "make the web but lose your mind first"
-  "url": "https://learntocode.com"
-  "created_by": "catlady379"
+  "title": "learntocode.com",
+  "description": "make the web but lose your mind first",
+  "url": "https://learntocode.com",
+  "created_by": "catlady379",
   "created_at": "timestamp"
   }]

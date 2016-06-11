@@ -1,0 +1,91 @@
+.savedbook {
+  /*border: 1px solid black;*/
+  font-family: Helvetica;
+  letter-spacing: .5px;
+  padding: 2.5px;
+  width: 40%;
+  margin-left: 20px;
+}
+
+.user-form {
+  padding: 10px;
+  text-align: center;
+  font-family: Helvetica;
+  font-size: 12px;
+}
+
+ .listname {
+  font-weight: bold;
+}
+
+.secondary-btn {
+  display: none;
+  margin-left: 10px;
+  padding: 5px;
+}
+
+h3 {
+  padding-left: 20px;
+  padding-top: 20px;
+  font-family: Helvetica;
+  display: none;
+  color: darkgrey;
+}
+
+.searchform {
+  height: 15px;
+}
+
+.info {
+  list-style: none;
+  line-height: 1.5;
+}
+
+h1 {
+  text-align: center;
+  color: darkgrey;
+  font-family: Helvetica;
+  border-bottom: 2px solid darkgrey;
+  padding: 5px 5px 10px 5px;
+  margin-top: 5px;
+}
+
+#savedbookX {
+  border-bottom: 0;
+}
+
+ul {
+  list-style: none;
+}
+/*/////// START OF MODAL STYLING //////*/
+
+.modal {
+ position: fixed;
+ margin-top: 12em;/**   WIDTH AND HEIGHT STYLING  **/
+ margin-left: 6em;
+ bottom: 1em;
+ right: 1em;
+ background: white;
+ /*border: 1px solid black;*/
+ /*padding: 1em;*/
+ border-radius: 3px;
+}
+
+
+.modal-container {
+ position: fixed;
+ top: 19em;/**** THIS MAKES 100% WIDTH AND HEIGHT    ****/
+ left: 12em;
+ right: 10em;
+ bottom: 12em;
+ background: #D5D5D5 ;
+ display: none;
+}
+
+.modal-container.showing {
+ display: block;
+}
+
+#modal-close {
+margin: 0% 0%;
+}
