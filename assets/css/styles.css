@@ -1,91 +1,14 @@
-/** {
-    box-sizing: border-box;
-}
-
-body{
-  background-color: #fafafa;
-}
-
-html{
-  font: 100%;
-}
-
-.mainWrap{
-padding: 6em;
-width: 900px;
-margin: auto;
-
-}
-
-img{
-  margin: 5em;
-  width: 100px;
-  height: 100px;
-}
-
-.headLoginBox{
-  text-align: center;
-}
-
-.boxLogin{
-  padding: 2px 4px 2px 4px;/*  RG  */
-  /*margin: auto;
-  display:inline-block;
-  border: solid 1px #D5D5D5;
-}
-
-.title{
-  font-family: Source Sans Pro;
-  color: white;
-  letter-spacing: 10px;
-  text-align: center;
-  font-size: 50px;
-  padding-bottom: 22px 0 22px 0;
-  margin-bottom: 22px;
-  border-bottom: solid 1px #D5D5D5;
-  background: #D5D5D5;
-
-}
-
-#usernameLogin{
-  letter-spacing: 1.5px;
-  display: block;
-  text-align: center;
-  margin: 0 20px 0 30px;
-}
-
-#passwordLogin{
-  letter-spacing: 1.5px;
-  display: block;
-  text-align: center;
-  margin: 0 20px 0 30px;
-}
-
-.submit{
-  letter-spacing: 1.5px
-  margin: 40px;
-  width: 75px;
-  height:25px;
-  text-align: center;
-  background-color: #D5D5D5;
-  color: white;
-  border: none;
-  outline-style: none;
-}*/
-
-
-
-
 /**************************************************************/
 /**                   RHONDA                              **/
-/*body{
-  margin: 100%;
+body{
+  /*margin: 100%;
   display: block;
-  font-family: 'Lato', Calibri, Arial, sans-serif;
-  background-color: lightblue;
-}*/
+  font-family: 'Lato', Calibri, Arial, sans-serif;*/
+  background-color: #D4B0B0;
+}
 
 .main-container{
+  margin: 2em 4em 2em 4em;
 
 }
 
@@ -95,13 +18,15 @@ img{
   font-size: 4em;
 }
 
+
 form{
-  margin: 0em 0em 0em 6em;
+  font-size: 30px;
+  margin: 0em 0em 2em 6em;
 }
 
 
 .bookmark-area{
-  margin: 2em 0em 0em 3em;
+  margin: 4em 0em 0em 3em;
 }
 
 
@@ -125,7 +50,7 @@ form{
 .Bookmark-choices{
   margin: 0 0 0.3em;
 	padding: 1em 0 0.5em;
-  color: #47a3da;
+  color: black;
 	border-bottom: 1px solid #ddd;
 	font-size: 1em;
 	font-weight: 300;
@@ -167,7 +92,7 @@ h3:hover>i{
   .Section-A{
     margin: 0 0 0.3em;
     padding: 1em 0 0.5em;
-    color: #47a3da;
+    color: black;
     border-bottom: 1px solid #ddd;
     font-size: 1em;
     font-weight: 300;
@@ -186,8 +111,9 @@ h3:hover>i{
   left: 12em;
   right: 10em;
   bottom: 12em;
-  background: lightblue;
+  background: #D5D5D5;
   display: none;
+
 }
 
 .modal-container.showing {
@@ -204,7 +130,7 @@ h3:hover>i{
   bottom: 1em;
   right: 1em;
   background: white;
-  /*border: 1px solid #AAA;*/
+  /*border: 1px solid black;*/
   /*padding: 1em;*/
   border-radius: 3px;
 }
@@ -222,7 +148,10 @@ margin: 0% 0%;
  .get-recommendations{
   font-size: 10px;
   cursor: pointer;
+
 }
+
+
 
 .primary-button{
   position:fixed;
@@ -247,13 +176,27 @@ margin: 0% 0%;
   margin-left:
 }*/
 
- #add{
+#add{
   display: block;
 }
 
 #get{
   display: block;
 }
+
+.modal-container input{
+  color: black;
+}
+
+
+
+P{
+  font-size: 26px;
+  text-align: center;
+  color: white;
+}
+
+
 
 
 
