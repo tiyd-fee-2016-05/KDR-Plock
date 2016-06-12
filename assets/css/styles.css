@@ -1,192 +1,182 @@
-
-body{
-  background-color: #fafafa;
+body {
+    background-color: #fafafa;
 }
-
-html{
-  font: 100%;
+html {
+    font: 100%;
 }
-
-.mainWrap{
-padding: 6em;
-width: 40%;
-margin: auto;
-
+.mainWrap {
+    padding: 6em;
+    width: 40%;
+    margin: auto;
 }
 
 /* LOGO */
 
-img{
-  margin: 0 12em;
-  width: 100px;
-  height: 100px;
+img {
+    margin: 0 12em;
+    width: 100px;
+    height: 100px;
 }
 
 /* USER LOGIN MODAL */
-.signin{
-  display: block;
-  letter-spacing: 1.5px;
-  margin: 5em 12.7em;
-  width: 200px;
-  height:25px;
-  text-align: center;
-  background-color: #D5D5D5;
-  color: white;
-  border: none;
-  outline-style: none;
-}
 
-.login-container.showing{
-  display: block;
+.signin {
+    display: block;
+    letter-spacing: 1.5px;
+    margin: 5em 12.7em;
+    width: 200px;
+    height: 25px;
+    text-align: center;
+    background-color: #D5D5D5;
+    color: white;
+    border: none;
+    outline-style: none;
 }
-
-.login-container{
-  margin: 0 7em;
-  width: 16em;
-  display: none;
-  border: solid 1px #D5D5D5;
+.login-container.showing {
+    display: block;
 }
-
-  .siteName{
-  font-family: Source Sans Pro;
-  color: white;
-  letter-spacing: 10px;
-  text-align: center;
-  font-size: 50px;
-  padding-bottom: 22px 0 22px 0;
-  margin-bottom: 22px;
-  border-bottom: solid 1px #D5D5D5;
-  background: #D5D5D5;
+.login-container {
+    margin: 0 7em;
+    width: 16em;
+    display: none;
+    border: solid 1px #D5D5D5;
 }
-
-#username-login{
-  letter-spacing: 1.5px;
-  display: block;
-  text-align: center;
-  margin: 0 5.4em;
+.siteName {
+    font-family: Source Sans Pro;
+    color: white;
+    letter-spacing: 10px;
+    text-align: center;
+    font-size: 50px;
+    padding-bottom: 22px 0 22px 0;
+    margin-bottom: 22px;
+    border-bottom: solid 1px #D5D5D5;
+    background: #D5D5D5;
 }
-
-#password-login{
-  visibility: visible;
-  letter-spacing: 1.5px;
-  display: block;
-  text-align: center;
-  margin: 0 5.4em;
+#username-login {
+    letter-spacing: 1.5px;
+    display: block;
+    text-align: center;
+    margin: 0 5.4em;
 }
-
-.confirm{
-  display: none;
+#password-login {
+    visibility: visible;
+    letter-spacing: 1.5px;
+    display: block;
+    text-align: center;
+    margin: 0 5.4em;
 }
-
-.confirm.showing{
-  display: block;
-  letter-spacing: 1.5px;
-  margin-top: 2.5em;
-  width: 23.3em;
-  height:25px;
-  text-align: center;
-  background-color: #D5D5D5;
-  color: white;
-  border: none;
-  outline-style: none;
+.confirm {
+    display: none;
 }
-
+.confirm.showing {
+    display: block;
+    letter-spacing: 1.5px;
+    margin-top: 2.5em;
+    width: 23.3em;
+    height: 25px;
+    text-align: center;
+    background-color: #D5D5D5;
+    color: white;
+    border: none;
+    outline-style: none;
+}
 
 /*Rhonda's Nested Accordion Components*/
 
-.savedBookmarkAccordion{
-  display: none;
-  font-family: Source Sans Pro;
-  letter-spacing: 1.5px;
-  color: #d5d5d5;
-  margin: 2em 2.6em;
-  width: 80%;
-}
-
-h3{
-  font-family: Source Sans Pro;
-  letter-spacing: 1.5px;
-  color: #d5d5d5;
-}
-
-.bookmark-area{
-  margin: 4em 0em 0em 3em;
-}
-
-
-
-.accordion-panel{
-  display: none;
-}
-
-
-.fa.fa-arrow-right{
-  font-style: normal;
-  font-size: 0.5em;
-  font-weight: normal;
-	font-variant: inherit;
-  /*line-height: 0.5;*/
-  padding-right: 10px;
-  /*transition-delay:  1s;*/
-  cursor: pointer;
-}
-
-.Bookmark-choices{
-  margin: 0 0 0.3em;
-	padding: 1em 0 0.5em;
-  color: black;
-	border-bottom: 1px solid #ddd;
-	font-size: 1em;
-	font-weight: 300;
-  font-style: normal;
-  cursor: pointer;
-}
-
-h3:hover>i{
-  color: #569ed2;
-}
-
-
-.hide-right-arrow{
+.savedBookmarkAccordion {
     display: none;
-  }
-
-
-.hide-down-arrow{
+    font-family: Source Sans Pro;
+    letter-spacing: 1.5px;
+    color: #d5d5d5;
+    margin: 2em 2.6em;
+    width: 80%;
+}
+h3 {
+    font-family: Source Sans Pro;
+    letter-spacing: 1.5px;
+    color: #d5d5d5;
+}
+.bookmark-area {
+    margin: 4em 0em 0em 3em;
+}
+.accordion-panel {
     display: none;
-  }
+}
+.fa.fa-arrow-right {
+    font-style: normal;
+    font-size: 0.5em;
+    font-weight: normal;
+    font-variant: inherit;
+    /*line-height: 0.5;*/
+    padding-right: 10px;
+    /*transition-delay:  1s;*/
+    cursor: pointer;
+}
+.Bookmark-choices {
+    margin: 0 0 0.3em;
+    padding: 1em 0 0.5em;
+    color: black;
+    border-bottom: 1px solid #ddd;
+    font-size: 1em;
+    font-weight: 300;
+    font-style: normal;
+    cursor: pointer;
+}
+h3:hover>i {
+    color: #A3564D;
+}
+.hide-right-arrow {
+    display: none;
+}
+.hide-down-arrow {
+    display: none;
+}
+.show-down-arrow {
+    /**  JS class **/
+    display: inline;
+}
 
-.show-down-arrow{/**  JS class **/
-    display:inline;
-  }
+.fa-bookmark{
+  color:#A3564D;
+}
+
+/* Recommendations Buttons */
+
+.recButton{
+  margin-bottom: .5em;
+  background-color: #d5d5d5;
+  border: none;
+  outline: none;
+  font-family: source sans pro;
+  letter-spacing: 1.5px;
+  color: white;
+  width: 37.3em;
+  height: 2.5em;
+}
+
 
 /* Add Bookmark Modal */
 
-#addBookmarkModal{
-  visibility: hidden
+#addBookmarkModal {
+    visibility: hidden
 }
-
-#addBookmarkModal.showing{
-  visibility: visible;
-  width: 400px;
-  height: 400px;
-  border: solid 1px #D5D5D5;
+#addBookmarkModal.showing {
+    visibility: visible;
+    width: 400px;
+    height: 400px;
+    border: solid 1px #D5D5D5;
 }
-
-
-#usernameLogin{
-  visibility: visible;
-  letter-spacing: 1.5px;
-  display: block;
-  text-align: center;
-  margin: 0 20px 0 30px;
+#usernameLogin {
+    visibility: visible;
+    letter-spacing: 1.5px;
+    display: block;
+    text-align: center;
+    margin: 0 20px 0 30px;
 }
-
-
-#passwordLogin{
-  visibility: visible;
-  letter-spacing: 1.5px;
-  display: block;
-  text-align: center;
-  margin: 0 20px 0 30px;
+#passwordLogin {
+    visibility: visible;
+    letter-spacing: 1.5px;
+    display: block;
+    text-align: center;
+    margin: 0 20px 0 30px;
 }

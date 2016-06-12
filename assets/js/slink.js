@@ -19,6 +19,8 @@ $('.confirm').on("click", function() {
 });
 
 //Call AJAX on clicking submit//
+
+//David's GET request; appends information to assigned sections//
 //Will pull user information triggered by clicking on "Saved Bookmarks"//
 $('.Bookmark-choices').on('click', function jSONson() {
 
@@ -41,11 +43,11 @@ $('.Bookmark-choices').on('click', function jSONson() {
             var bySave = (data[i].created_by);
             var atSave = (data[i].created_at);
         };
-        $('.infoTitle').append("Title: " + titleSave);
-        $('.infoDesc').append("Description: " + descSave);
-        $('.infoURL').append("URL: " + urlSave);
-        $('.infoBy').append("Created by: " + bySave);
-        $('.infoAt').append("Created at: " + atSave);
+        $('.infoTitle').append(titleSave);
+        $('.infoDesc').append(descSave);
+        $('.infoURL').append(urlSave);
+        $('.infoBy').append( bySave);
+        $('.infoAt').append(atSave);
     });
 
     console.log("Ajax call!");
@@ -66,6 +68,7 @@ $('.Bookmark-choices').click(function() {
     $("i", this).toggleClass("hide-right-arrow");
     $("i", this).last().toggleClass("show-down-arrow");
 });
+
 $(".Section-A").click(function() {
     $(this).next().toggle();
     $("i", this).toggleClass("hide-right-arrow");
