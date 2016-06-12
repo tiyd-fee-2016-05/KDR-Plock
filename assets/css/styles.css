@@ -96,6 +96,17 @@ img{
 
 .savedBookmarkAccordion{
   display: none;
+  font-family: Source Sans Pro;
+  letter-spacing: 1.5px;
+  color: #d5d5d5;
+  margin: 2em 2.6em;
+  width: 80%;
+}
+
+h3{
+  font-family: Source Sans Pro;
+  letter-spacing: 1.5px;
+  color: #d5d5d5;
 }
 
 .bookmark-area{
@@ -132,7 +143,6 @@ img{
 }
 
 h3:hover>i{
-  transform: rotateZ(45deg);
   color: #569ed2;
 }
 

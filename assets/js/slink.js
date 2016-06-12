@@ -1,46 +1,76 @@
-
-
 var x = 1;
 console.log(x);
 
-// RHONDA'S MODAL FUNCTION//
+// USER LOGIN CONTAINER//
 
-$('.signin').on("click", function () {
-$('.signin').css('display', 'none')
-$('.login-container , .confirm').addClass('showing');
+$('.signin').on("click", function() {
+    $('.signin').css('display', 'none')
+    $('.login-container , .confirm').addClass('showing');
 
-console.log('sign in clicked');
-
-});
-
-$('.confirm').on("click", function () {
-  $('.login-container , .confirm , .signin').removeClass('showing');
-  $('.signin').css('display', 'none')
-console.log('login submitted');
+    console.log('sign in clicked');
 
 });
 
+$('.confirm').on("click", function() {
+    $('.login-container , .confirm , .signin').removeClass('showing');
+    $('.signin').css('display', 'none')
+    console.log('login submitted');
+
+});
+
+//Call AJAX on clicking submit//
+//Will pull user information triggered by clicking on "Saved Bookmarks"//
+$('.Bookmark-choices').on('click', function jSONson() {
+
+    $.ajax({
+        url: "https://slink.herokuapp.com/link",
+        dataType: "JSON",
+        method: 'GET',
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader('Authorization', 'person1');
+        },
+
+    }).done(function(data) {
+        console.log("success!");
+        console.log(data);
+
+        for (var i = 0; i < data.length; i++) {
+            var titleSave = (data[i].title);
+            var descSave = (data[i].description);
+            var urlSave = (data[i].URL);
+            var bySave = (data[i].created_by);
+            var atSave = (data[i].created_at);
+        };
+        $('.infoTitle').append("Title: " + titleSave);
+        $('.infoDesc').append("Description: " + descSave);
+        $('.infoURL').append("URL: " + urlSave);
+        $('.infoBy').append("Created by: " + bySave);
+        $('.infoAt').append("Created at: " + atSave);
+    });
+
+    console.log("Ajax call!");
+});
 
 
 //USER LOGIN (LEADS TO SHOW BOOKMARKS)
 
-$('.confirm').on('click', function(){
-  $('.savedBookmarkAccordion').css('display', 'inline-block');
-console.log('nested accordion present');
+$('.confirm').on('click', function() {
+    $('.savedBookmarkAccordion').css('display', 'inline-block');
+    console.log('nested accordion present');
 });
 
 //Rhonda's Nested Accordion
 
-$('.Bookmark-choices').click(function(){
-          $(this).next().toggle();
-          $("i", this).toggleClass("hide-right-arrow");
-          $("i", this).last().toggleClass("show-down-arrow");
-        });
-  $(".Section-A").click(function(){
-            $(this).next().toggle();
-            $("i", this).toggleClass("hide-right-arrow");
-            $("i", this).last().toggleClass("show-down-arrow");
-        });
+$('.Bookmark-choices').click(function() {
+    $(this).next().toggle();
+    $("i", this).toggleClass("hide-right-arrow");
+    $("i", this).last().toggleClass("show-down-arrow");
+});
+$(".Section-A").click(function() {
+    $(this).next().toggle();
+    $("i", this).toggleClass("hide-right-arrow");
+    $("i", this).last().toggleClass("show-down-arrow");
+});
 
 
 //SAVE BOOKMARKS ('POST' REQUEST)
@@ -61,37 +91,37 @@ $('.Bookmark-choices').click(function(){
 
 //FUNCTION FOR ADD BOOKMARK MODAL
 
-  $('.newBookmark').click(function(){
-  $('.addBookmarkWrapper').addClass('showing');
+$('.newBookmark').click(function() {
+    $('.addBookmarkWrapper').addClass('showing');
 
-  console.log('addBookmark modal working');
+    console.log('addBookmark modal working');
 
 });
 
 //FUNCTION FOR WHEN ADDBOOKMARK FORMS ARE COMPLETE
 
-$('#addBookmarkSubmit').click(function(e){
+$('#addBookmarkSubmit').click(function(e) {
 
-  e.preventDefault();
-  $('.addBookmarkWrapper').css('dispaly' , 'inline-block');
-  $('.savedBookmarks').append('.newBookmark');
+    e.preventDefault();
+    $('.addBookmarkWrapper').css('dispaly', 'inline-block');
+    $('.savedBookmarks').append('.newBookmark');
 
-  $(function savePostCall(){
-    $.ajax({
-      type: 'POST',
-      dataType: 'json',
-      // data: JSON.stringify ({ 'title'})
-      url: "https://slink.herokuapp.com/link",
-      beforeSend: function (xhr) {
-      xhr.setRequestHeader('Authorization', 'person1');
-      //Make information into variables. Values
-    },
-     }).done(function(data){
+    $(function savePostCall() {
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            // data: JSON.stringify ({ 'title'})
+            url: "https://slink.herokuapp.com/link",
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader('Authorization', 'person1');
+                //Make information into variables. Values
+            },
+        }).done(function(data) {
 
-      console.log('save bookmark called');
-      console.log('ajax called, new bookmark submitted successfully');
+            console.log('save bookmark called');
+            console.log('ajax called, new bookmark submitted successfully');
+        });
     });
-  });
 });
 
 
