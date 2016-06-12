@@ -1,6 +1,6 @@
 
-//////////////////////////////////////////////////////////////////
-//                   NESTED ACCORDION        ////////////////////
+////////////////////////////////////////////////////////////////////////////////
+//                   NESTED ACCORDION        ///////////////////////////////////
 $(".Bookmark-choices").click(function(){
     $(this).next().toggle();
     $("i", this).toggleClass("hide-right-arrow");
@@ -13,9 +13,10 @@ $(".Bookmark-choices").click(function(){
       $("i", this).last().toggleClass("show-down-arrow");
   });
 
+////////////////////////////////////////////////////////////////////////////////
 
 
-//////////       MODAL   ////////////////////////////////////////////////
+//////////       MODAL       (Rhonda before collaborating with group)         ////////////////////////////////////////////////
     $('h1').on("click", function () {//when you click on the btn the modal pops up//
         $(this).text("recommendations");//when you click on the btn the text changes//
 
@@ -32,31 +33,24 @@ $(".Bookmark-choices").click(function(){
 // });
 });
 
-////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////
 
 
-    //FUNCTION FOR ADD BOOKMARK MODAL
-
-    // $('.addbook').click(function() { // .addBook is + button's class next to Saved Bookmarks
-    //     // $('.addBookmarkWrapper').addClass('showing'); // makes a modal pop up that has inputs for add new
-    //
-    //     console.log('addBookmark modal working');
-    //
-    // });
-
-    //////////////
 
 
-    //////////       MODAL
+//////////////////////////////////////////////////////////////////////////////////////////
+
+
+//////////       MODAL      (After we collaborated an used it in our project) //////////////////
     $('.secondary-btn').on("click", function() { //when you click on the btn the modal pops up//
-        // $(this).text("recommendations"); //when you click on the btn the text changes//
+
 
         $('.modal-container').addClass('showing');
 
         console.log("yes");
     });
     $('#modal-close').on('click', function() {
-        //when you click on the recommendations the modal container disappears//
+
         $('.modal-container').removeClass('showing');
         console.log("no");
         //     $('.modal').click(function (e) // stops the modal container from appearing after it's closed//
@@ -64,11 +58,16 @@ $(".Bookmark-choices").click(function(){
         // });
     });
 
+///////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
 
 
-    ///// AJAX "GET" AND "POST" RECOMMENDATIONS  ///////
-    //  Just took David's example and applied it to get and post recommendations  //
+          //////////////  AJAX "GET" AND "POST" RECOMMENDATIONS  ///////
+          //        *********************************************     //
+          /////////////////////////////////////////////////////////////
 
+/////// GET RECOMMENDATIONS      //////////////////////////////////////////////////////////
+//  David's template.  I added "recommend" to the link and renamed the variables and classes //
     $(function(){
     "use strict";
 
@@ -88,10 +87,7 @@ $(".Bookmark-choices").click(function(){
       }).done(function(data) {
           console.log("success!");
           console.log(data);
-          // $('.bookmark1').append("Bookmark:");
-          //  var jsonstring = JSON.parse(data);
-          // var jsonArray = $.makeArray(data);
-          // var jsonArray = $.map(data, function)
+
           for (var i = 0; i < data.length; i++) {
               var titleRecommend = (data[i].title);
               var descRecommend = (data[i].description);
@@ -108,8 +104,9 @@ $(".Bookmark-choices").click(function(){
 
       console.log("Ajax call!");
   }
-////     GET RECOMMENDATIONS IS WORKING ACCORDING TO CONSOLE IN THE INSPECTOR  //
 
+////     GET RECOMMENDATIONS IS WORKING ACCORDING TO CONSOLE IN THE INSPECTOR  //
+///                 Rhonda's function call to "get" recommendations            //
   $('.info').on('click', function(e) {
       e.preventDefault();
       jSONson();
@@ -121,15 +118,17 @@ $(".Bookmark-choices").click(function(){
 
       console.log("success");
   })
-/////////////////////////////////////////////////////////////////////////
+///////END GET RECOMMENDATIONS  ///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
 
 
 
 
-
+///////////////////////////////  POST RECOMMENDATIONS ////////////////////////////////////
+/////          Repeat:  David's structure and my ammendments to the function   //
 function jSONson() {
     $.ajax({
-        url: "https://slink.herokuapp.com/link/recommendp",
+        url: "https://slink.herokuapp.com/link/recommend",
         dataType: "JSON",
         method: 'POST',
         beforeSend: function(xhr) {
@@ -163,11 +162,13 @@ function jSONson() {
 
 
 /////////////////////   POST RECOMMENDATION IS WORKING ACCORDING TO THE CONSOLE ////////
+//        Rhonda's post function call                                    //
     $('#user-form').on("click", function(e) {
         e.preventDefault();
         var details = $("#user-form").serialize();
-        $.post("text", details, function(data){
+        $.post(".text", details, function(data){
           $("#user-form").html(data);
         });
         console.log("it works");
     });
+///// END  POST RECOMMENDATIONS ///////////////////////////////////////////////////////
