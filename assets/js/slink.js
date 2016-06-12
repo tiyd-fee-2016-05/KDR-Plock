@@ -66,31 +66,21 @@ $(".Bookmark-choices").click(function(){
 
 
 
-    ///// AJAX "GET" RECOMMENDATIONS  ///////
-    //  Just took David's example and applied it to getting recommendations  //
-    //  Not really clear on what I am doing.  The console.log(Ajax call!) does show up in the inspector console. //
+    ///// AJAX "GET" AND "POST" RECOMMENDATIONS  ///////
+    //  Just took David's example and applied it to get and post recommendations  //
+
     $(function(){
     "use strict";
 
     var username = $('input[name="slink-login"]').val();
-    // var username = 'person1';
 
-    // var recommends = "bookmarks";
+
   function jSONson() {
       $.ajax({
-          url: "https://slink.herokuapp.com/link/recommendations",
+          url: "https://slink.herokuapp.com/link/recommend",
           dataType: "JSON",
           method: 'GET',
           beforeSend: function(xhr) {
-              // Assuming username and password are defined somewhere as strings
-              // btoa is a built-in function that converts a string to base64
-
-              // var base64Credentials = btoa('created_by'); // add username or created_by as argument // need password?
-
-              // setRequestHeader is a method of the DOM's AJAX object (XMLHttpRequest)
-              // it allows us to set HTTP headers. These are key/value pairs that
-              // modify the way an HTTP request is understood by the server. Here, we
-              // are adding the Authorization header. For more info, see Google!
 
               xhr.setRequestHeader('Authorization', 'person1');
           },
@@ -106,53 +96,78 @@ $(".Bookmark-choices").click(function(){
               var titleRecommend = (data[i].title);
               var descRecommend = (data[i].description);
               var urlRecommend = (data[i].URL);
-              var byRecomend= (data[i].created_by);
+              var byRecommend= (data[i].created_by);
               var atRecommend = (data[i].created_at);
           };
-          $('.addTitle').append("Title: " + titleRecommend);
-          $('.addDesc').append("Description: " + desRecommend);
-          $('.addURL').append("URL: " + urlRecommend);
-          $('.addBy').append("Created by: " + byRecommend);
-          $('.addAt').append("Created at: " + atRecommend);
+          $('.recommendTitle').append("Title: " + titleRecommend);
+          $('.recommendDesc').append("Description: " + desRecommend);
+          $('.recommendURL').append("URL: " + Url);
+          $('.recommendBy').append("Created by: " + byRecommend);
+          $('.recommendAt').append("Created at: " + atRecommend);
       });
 
       console.log("Ajax call!");
   }
+////     GET RECOMMENDATIONS IS WORKING ACCORDING TO CONSOLE IN THE INSPECTOR  //
 
-
-  $('.user-form').on('submit', function(e) {
+  $('.info').on('click', function(e) {
       e.preventDefault();
       jSONson();
-      // $('.savedbook').css('border', '1px solid darkgrey');
-      // $('h3').css('display', 'inline-block');
-      // $('.secondary-btn').css('display', 'inline-block');
-
-  })
-
-/////////////////////   POSTING IS NOT WORKING 404 error  ////////
-    $('#recommendbooks').click(function(e) {
-
-        e.preventDefault();
-        $(this).addClass('showing');
-        $(this).append('li');
-
-        $(function savePostCall() {
-            $.ajax({
-                type: 'POST',
-                dataType: 'json',
-                url: "https://slink.herokuapp.com/link/recommendations",
-                beforeSend: function(xhr) {
-                    xhr.setRequestHeader('Authorization', 'person1');
-                },
-            }).done(function(data) {
-
-                console.log('save recommendation called');
-                console.log('ajax called, new recommendations submitted successfully');
-            });
-        });
+      var getRecommendations = event.target.id;
+      $.get(getRecommendations, function(data){
+        $(".info").html(data);
+      });
     });
 
+      console.log("success");
+  })
+/////////////////////////////////////////////////////////////////////////
 
 
 
-})
+
+
+function jSONson() {
+    $.ajax({
+        url: "https://slink.herokuapp.com/link/recommendp",
+        dataType: "JSON",
+        method: 'POST',
+        beforeSend: function(xhr) {
+
+            xhr.setRequestHeader('Authorization', 'person1');
+        },
+
+    }).done(function(data) {
+        console.log("success!");
+        console.log(data);
+        // $('.bookmark1').append("Bookmark:");
+        //  var jsonstring = JSON.parse(data);
+        // var jsonArray = $.makeArray(data);
+        // var jsonArray = $.map(data, function)
+        for (var i = 0; i < data.length; i++) {
+            var titleRecommend = (data[i].title);
+            var descRecommend = (data[i].description);
+            var urlRecommend = (data[i].URL);
+            var byRecommend= (data[i].created_by);
+            var atRecommend = (data[i].created_at);
+        };
+        $('.recommendTitle').append("Title: " + titleRecommend);
+        $('.recommendDesc').append("Description: " + desRecommend);
+        $('.recommendURL').append("URL: " + Url);
+        $('.recommendBy').append("Created by: " + byRecommend);
+        $('.recommendAt').append("Created at: " + atRecommend);
+    });
+
+    console.log("Ajax call!");
+}
+
+
+/////////////////////   POST RECOMMENDATION IS WORKING ACCORDING TO THE CONSOLE ////////
+    $('#user-form').on("click", function(e) {
+        e.preventDefault();
+        var details = $("#user-form").serialize();
+        $.post("text", details, function(data){
+          $("#user-form").html(data);
+        });
+        console.log("it works");
+    });
