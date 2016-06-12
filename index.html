@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.13.1/lodash.js"></script>
-    <!-- Do we need lodash? -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -24,9 +22,11 @@
 
         <!--SEQUENCE 1 - LOGIN BOX-->
         <!--Sign in button viewable and clickable upon loading page-->
+
         <button class="signin">sign in</button>
 
         <!--Modal pops up when signin has been clicked-->
+
         <div class="login-modal">
             <div class="login-container">
                 <div class="siteName"> SLINK </div>
@@ -47,85 +47,103 @@
 
         <!-- SEQUENCE 2 - USER BOOKMARKS -->
 
+        <!--SEQUENCE 2.A - ADD BOOKMARKS -->
+                    <div class = "addBookmarkWrapper">
+                      <!-- <span class = "addBM"><i class="fa fa-file-text" aria-hidden="true"></i></span> -->
+                      <div><input class = "newBookmarkInfo" placeholder = "title"></input></div>
+                      <div><input class = "newBookmarkInfo" placeholder = "URL"></input></div>
+                      <div><input class = "newBookmarkInfo" placeholder = "description"></input></div>
+                    <button id = "addBookmarkSubmit"> add bookmark </button>
+                  </div>
+
         <!-- Rhonda's Nested Accordion -->
+        <!--List information appended with David's GET request-->
 
         <div class="savedBookmarkAccordion">
+            <button class="addNewBookmark"><i class="fa fa-file-text-o" aria-hidden="true"></i>
+
+            </button>
 
             <h3 class="Bookmark-choices" id="tada">
 
               <i class="fa fa-plus-square-o" aria-hidden="true"id="one"></i> Your Bookmarks</h3>
-              <div class="accordion-panel" id="1">
+
+            <div class="accordion-panel" id="1">
 
                 <ul class="Lists">
                     <i class="fa fa-bookmark" aria-hidden="true"></i>
-                      <li class="info"><span class="infoTitle"></span></li>
+                    <li class="info"><span class="infoTitle"></span></li>
 
-                      <li class="info"><span class="infoURL"></span></li>
+                    <li class="info"><span class="infoURL"></span></li>
 
-                      <li class="info">
+                    <li class="info">
                         </span><span class="infoDesc"></span></li>
 
-                    <li>
-                      <li class ="info"><span class = "infoAt"></span></li>
+                    <li class="info"><span class="infoAt"></span></li>
 
-                        <li>
-                        <li class = "info"><span class = "infoBy"></span></li>
+                    <li class="info"><span class="infoBy"></span></li>
+
                     <br>
 
 
                     <i class="fa fa-bookmark" aria-hidden="true"></i>
-                      <li class="info"><span class="infoTitle"></span></li>
+                    <li class="info"><span class="infoTitle"></span></li>
 
-                      <li class="info"><span class="infoURL"></span></li>
+                    <li class="info"><span class="infoURL"></span></li>
 
-                      <li class="info">
+                    <li class="info">
                         "</span><span class="infoDesc"></span>"</li>
 
                     <li>
-                      <li class ="info"><span class = "infoAt"></span></li>
+                        <li class="info"><span class="infoAt"></span></li>
 
                         <li>
-                        <li class = "info"><span class = "infoBy"></span></li>
-                    <br>
+                            <li class="info"><span class="infoBy"></span></li>
+                            <br>
 
-                    <i class="fa fa-bookmark" aria-hidden="true"></i>
-                      <li class="info"><span class="infoTitle"></span></li>
+                            <i class="fa fa-bookmark" aria-hidden="true"></i>
+                            <li class="info"><span class="infoTitle"></span></li>
 
-                      <li class="info"><span class="infoURL"></span></li>
+                            <li class="info"><span class="infoURL"></span></li>
 
-                      <li class="info">
-                        "</span><span class="infoDesc"></span>"</li>
+                            <li class="info">
+                                "</span><span class="infoDesc"></span>"</li>
 
-                    <li>
-                      <li class ="info"><span class = "infoAt"></span></li>
+                            <li>
+                                <li class="info"><span class="infoAt"></span></li>
 
-                        <li>
-                        <li class = "info"><span class = "infoBy"></span></li>
+                                <li>
+                                    <li class="info"><span class="infoBy"></span></li>
                 </ul>
-              </div>
+            </div>
+
+            <!-- SEQUENCE 3 - RECOMMENDATIONS ACCORDION + MODALS -->
 
             <div class="recommendationsAccordion">
 
-            <h3 class="Bookmark-choices" id="tada">
+                <h3 class="Bookmark-choices" id="tada">
 
               <i class="fa fa-plus-square-o" aria-hidden="true"id="one"></i> Recommendations</h3>
-                  <div class="accordion-panel" id="1">
+                <div class="accordion-panel" id="1">
 
                     <ul class="Lists">
-                          <li><button class = "recButton"> get recommendations</button></li>
+                        <li>
+                            <button class="recButton"> get recommendations</button>
+                        </li>
 
-                          <li><button class ="recButton"> make recommendations</button></li>
+                        <li>
+                            <button class="recButton"> make recommendations</button>
+                        </li>
 
                     </ul>
-                  </div>
                 </div>
+            </div>
 
+            </script>
 
-        </script>
+            <!--SEQUENCE 2.A - ADD BOOKMARKS -->
 
-        <!--SEQUENCE 2.A - ADD BOOKMARKS -->
-
-        <!-- <div wrapper id = "addBookmarkModal">
+            <!-- <div wrapper id = "addBookmarkModal">
       <span><input id = "enterBookMarkTitle" placeholder = "title"></input></span>
       <span><input id = "enterBookmarkURL" placeholder = "URL"></input></span>
       <span><form id = "enterBookmarkDescription" placeholder = "description"></form></span>
@@ -133,50 +151,54 @@
     </div> -->
 
 
-        <!--SEQUENCE 3 - RECOMMENDATIONS ACCORDION -->
+            <!--SEQUENCE 3 - RECOMMENDATIONS ACCORDION -->
 
 
-        <!-- <div class = "listBookmarks">
+            <!-- <div class = "listBookmarks">
     <ul class = "userBookmarks"><h3 class = "listHead"><i class="fa fa-plus" aria-hidden="true"></i> Recommendations </h3> -->
 
-        <!--Make a span for clickable text?? How do we not interact with call functionality??-->
+            <!--Make a span for clickable text?? How do we not interact with call functionality??-->
 
 
-        <!-- SEQUENCE 4.A - RECOMMENDATION MODAL -->
+            <!-- SEQUENCE 4.A - RECOMMENDATION MODAL -->
 
 
-        <script id="recommend-bookmark" type="text/html">
+            <script id="recommend-bookmark" type="text/html">
 
-            <div id="recommendModal">
-                <li class="recBookmarks">Make recommendations</li>
-                <div class="modal-container">
-                    <button class="close"> X </button>
-                    <div class="modal">
-                        <ul class="modalText">
-                            <li class="recForm>" <form class="recName">
-                                <input text> Recommend for </input>
-                                </form>
-                                <li>
-                                    <li class="recForm>" <form class="urecURL">
-                                        <input text> Recommend URL </input>
-                                        </form>
-                                        <li>
-                        </ul>
-                        <button class="submit"> share </button>
+                <div id="recommendModal">
+                    <li class="recBookmarks">Make recommendations</li>
+                    <div class="modal-container">
+                        <button class="close"> X </button>
+                        <div class="modal">
+                            <ul class="modalText">
+                                <li class="recForm>" <form class="recName">
+                                    <input text> Recommend for </input>
+                                    </form>
+                                    <li>
+                                        <li class="recForm>" <form class="urecURL">
+                                            <input text> Recommend URL </input>
+                                            </form>
+                                            <li>
+                            </ul>
+                            <button class="submit"> share </button>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-        </script>
+            </script>
 
-        <!--Also, pertaining to li's, which word do we need to invoke function?-->
-
-
-        <!-- REQUESTS Do we need to have separate scripts for each request? Guessing yes, but do not know yet. -->
+            <!--Also, pertaining to li's, which word do we need to invoke function?-->
 
 
-    </div>
-    <!--End .listBookmarks -->
+            <!-- REQUESTS Do we need to have separate scripts for each request? Guessing yes, but do not know yet. -->
+
+
+        </div>
+        <!--End .listBookmarks -->
+
+
+
+
     </div>
     <!--End .mainWrap -->
     <script type="text/javascript" src="assets/js/slink.js"></script>

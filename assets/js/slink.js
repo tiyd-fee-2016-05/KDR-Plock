@@ -94,8 +94,8 @@ $(".Section-A").click(function() {
 
 //FUNCTION FOR ADD BOOKMARK MODAL
 
-$('.newBookmark').click(function() {
-    $('.addBookmarkWrapper').addClass('showing');
+$('.addNewBookmark').click(function() {
+    $('.addBookmarkWrapper').css('display', 'block');
 
     console.log('addBookmark modal working');
 
@@ -106,7 +106,8 @@ $('.newBookmark').click(function() {
 $('#addBookmarkSubmit').click(function(e) {
 
     e.preventDefault();
-    $('.addBookmarkWrapper').css('dispaly', 'inline-block');
+    $('#addBookmarkWrapper').css('display', 'none');
+    console.log('clicked')
     $('.savedBookmarks').append('.newBookmark');
 
     $(function savePostCall() {
