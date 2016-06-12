@@ -6,6 +6,7 @@ console.log(x);
 // RHONDA'S MODAL FUNCTION//
 
 $('.signin').on("click", function () {
+$('.signin').css('display', 'none')
 $('.login-container , .confirm').addClass('showing');
 
 console.log('sign in clicked');
@@ -23,26 +24,23 @@ console.log('login submitted');
 
 //USER LOGIN (LEADS TO SHOW BOOKMARKS)
 
-function jSONson() {
-  $.ajax({
-    url: "https://slink.herokuapp.com/",
-    dataType: "JSON",
-    method: 'GET',
-    success: function(data)
-    {
-      console.log("success!");
-      console.log(data);
-      // var a = data.a;
-      $('.infoTitle').text(data.title);
-      $('.infoDesc').text(data.description);
-      $('.infoURL').text(data.url);
-      $('.infoBy').text(data.created_by);
-      $('.infoAt').text(data.created_at);
-    }
-    // success: successFunction
-  });
-}
-  console.log("Something works");
+$('.confirm').on('click', function(){
+  $('.savedBookmarkAccordion').css('display', 'inline-block');
+console.log('nested accordion present');
+});
+
+//Rhonda's Nested Accordion
+
+$('.Bookmark-choices').click(function(){
+          $(this).next().toggle();
+          $("i", this).toggleClass("hide-right-arrow");
+          $("i", this).last().toggleClass("show-down-arrow");
+        });
+  $(".Section-A").click(function(){
+            $(this).next().toggle();
+            $("i", this).toggleClass("hide-right-arrow");
+            $("i", this).last().toggleClass("show-down-arrow");
+        });
 
 
 //SAVE BOOKMARKS ('POST' REQUEST)
@@ -75,7 +73,7 @@ function jSONson() {
 $('#addBookmarkSubmit').click(function(e){
 
   e.preventDefault();
-  $('.addBookmarkWrapper').css('dispaly : inline-block');
+  $('.addBookmarkWrapper').css('dispaly' , 'inline-block');
   $('.savedBookmarks').append('.newBookmark');
 
   $(function savePostCall(){
@@ -86,6 +84,7 @@ $('#addBookmarkSubmit').click(function(e){
       url: "https://slink.herokuapp.com/link",
       beforeSend: function (xhr) {
       xhr.setRequestHeader('Authorization', 'person1');
+      //Make information into variables. Values
     },
      }).done(function(data){
 

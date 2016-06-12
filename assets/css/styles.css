@@ -9,7 +9,7 @@ html{
 
 .mainWrap{
 padding: 6em;
-width: 900px;
+width: 40%;
 margin: auto;
 
 }
@@ -17,7 +17,7 @@ margin: auto;
 /* LOGO */
 
 img{
-  margin: 5em;
+  margin: 0 12em;
   width: 100px;
   height: 100px;
 }
@@ -26,7 +26,7 @@ img{
 .signin{
   display: block;
   letter-spacing: 1.5px;
-  margin-top: 25px;
+  margin: 5em 12.7em;
   width: 200px;
   height:25px;
   text-align: center;
@@ -41,6 +41,8 @@ img{
 }
 
 .login-container{
+  margin: 0 7em;
+  width: 16em;
   display: none;
   border: solid 1px #D5D5D5;
 }
@@ -61,7 +63,7 @@ img{
   letter-spacing: 1.5px;
   display: block;
   text-align: center;
-  margin: 0 20px 0 30px;
+  margin: 0 5.4em;
 }
 
 #password-login{
@@ -69,7 +71,7 @@ img{
   letter-spacing: 1.5px;
   display: block;
   text-align: center;
-  margin: 0 20px 0 30px;
+  margin: 0 5.4em;
 }
 
 .confirm{
@@ -79,8 +81,8 @@ img{
 .confirm.showing{
   display: block;
   letter-spacing: 1.5px;
-  margin-top: 25px;
-  width: 200px;
+  margin-top: 2.5em;
+  width: 23.3em;
   height:25px;
   text-align: center;
   background-color: #D5D5D5;
@@ -89,6 +91,64 @@ img{
   outline-style: none;
 }
 
+
+/*Rhonda's Nested Accordion Components*/
+
+.savedBookmarkAccordion{
+  display: none;
+}
+
+.bookmark-area{
+  margin: 4em 0em 0em 3em;
+}
+
+
+
+.accordion-panel{
+  display: none;
+}
+
+
+.fa.fa-arrow-right{
+  font-style: normal;
+  font-size: 0.5em;
+  font-weight: normal;
+	font-variant: inherit;
+  /*line-height: 0.5;*/
+  padding-right: 10px;
+  /*transition-delay:  1s;*/
+  cursor: pointer;
+}
+
+.Bookmark-choices{
+  margin: 0 0 0.3em;
+	padding: 1em 0 0.5em;
+  color: black;
+	border-bottom: 1px solid #ddd;
+	font-size: 1em;
+	font-weight: 300;
+  font-style: normal;
+  cursor: pointer;
+}
+
+h3:hover>i{
+  transform: rotateZ(45deg);
+  color: #569ed2;
+}
+
+
+.hide-right-arrow{
+    display: none;
+  }
+
+
+.hide-down-arrow{
+    display: none;
+  }
+
+.show-down-arrow{/**  JS class **/
+    display:inline;
+  }
 
 /* Add Bookmark Modal */
 
