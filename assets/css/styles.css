@@ -36,7 +36,7 @@ img {
     display: block;
 }
 .login-container {
-    margin: 0 7em;
+    margin: 3em 7.8em;
     width: 16em;
     display: none;
     border: solid 1px #D5D5D5;
@@ -108,16 +108,30 @@ img {
   float: right;
 }
 
+.closeAddNew{
+  font-family: source sans pro;
+  color: #d5d5d5;
+  float: right;
+  background-color: #fafafa;
+  border: solid 2px #d5d5d5;
+  outline: none;
+}
+
+.closeAddNew:hover{
+  color: #A3564D;
+  border: solid 2px #A3564D;
+}
+
 .addBookmarkWrapper{
   display: none;
   border: solid 2px #d5d5d5;
   width: 15em;
   margin: 1.5em 6em 1.5em 5em;
-  padding: 1em .5em 1em 4.6em;
+  padding: 1em 1em 1em 4.6em;
 }
 
 .newBookmarkInfo{
-  margin: 1em 0;
+  margin: 1em 3em 1em 0;
   letter-spacing: 1.5px;
   font-family: source sans pro;
   text-align:left;

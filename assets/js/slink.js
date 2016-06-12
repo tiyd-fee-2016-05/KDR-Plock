@@ -98,10 +98,18 @@ $('.addNewBookmark').click(function() {
     $('.addBookmarkWrapper').css('display', 'block');
 
     console.log('addBookmark modal working');
-
 });
 
-//FUNCTION FOR WHEN ADDBOOKMARK FORMS ARE COMPLETE
+  $('.closeAddNew').click(function(){
+    $('.addBookmarkWrapper').css('display', 'none');
+
+    console.log('close addBookmark');
+});
+
+//FUNCTION FOR EXITING BOOKMARK
+$
+
+//FUNCTION FOR WHEN ADDBOOKMARK FORMS ARE SUBMITTED
 
 $('#addBookmarkSubmit').click(function(e) {
 
