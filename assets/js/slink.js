@@ -22,7 +22,7 @@ $(function() {
                 // modify the way an HTTP request is understood by the server. Here, we
                 // are adding the Authorization header. For more info, see Google!
 
-                xhr.setRequestHeader('Authorization', 'person1');
+                xhr.setRequestHeader('Authorization', 'username');
             },
 
         }).done(function(data) {
