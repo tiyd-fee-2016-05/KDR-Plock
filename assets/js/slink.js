@@ -116,21 +116,27 @@ $('#addBookmarkSubmit').click(function(e) {
     e.preventDefault();
     $('#addBookmarkWrapper').css('display', 'none');
     console.log('attempt to add bookmark')
-    $('.savedBookmarks').append('.newBookmark');
+    // $('.savedBookmarks').append('.');
 
-    var myData = {
+    var myData = JSON.stringify({
       created_by: 'person1',
       title: $('input[name="addnewtitle"]').val(),
       description: $('input[name="addnewdesc"]').val(),
-      url: $('input[name="addnewurl"]').val()
-    };
+      URL: $('input[name="addnewurl"]').val()
+    });
+
+    console.log(myData);
+
 
     $(function savePostCall() {
         $.ajax({
             method: 'POST',
             dataType: 'json',
             url: "https://slink.herokuapp.com/link",
-            data: JSON.stringify (myData)
+            data: myData,
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader('Authorization', 'person1');
+            }
           //   data: ({ "username": $('input[name="username2"]').val(), "title": $('input[name="addnewtitle"]').val(), "URL": $('input[name="addnewurl"]').val(), "description": $('input[name="addnewdesc"]').val()
           // })
 
@@ -142,9 +148,18 @@ $('#addBookmarkSubmit').click(function(e) {
             console.log(data);
             console.log('save bookmark called');
             console.log('ajax called, new bookmark submitted successfully');
+            $('.newLi').css('display', 'block');
+            $('.addnewnewtitle').append(data[1]);
+            $('.addnewnewdesc').append(data[2]);
+            $('.addnewnewurl').append(data[3]);
         });
+
+
+        // $('#addBookmarkSubmit').on('click', function() {
+
+       });
     });
-});
+
 
 
 //See Bookmarks

@@ -227,5 +227,9 @@ h3:hover>i {
   height: 2.5em;
 }
 
+.newLi {
+  display: none;
+}
+
 
 /* Add Bookmark Modal */
