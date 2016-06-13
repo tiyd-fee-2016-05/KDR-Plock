@@ -22,7 +22,7 @@ $('.confirm').on("click", function() {
 
 //David's GET request; appends information to assigned sections//
 //Will pull user information triggered by clicking on "Saved Bookmarks"//
-$('.Bookmark-choices').on('click', function jSONson() {
+$('.confirm').on('click', function jSONson() {
 
     $.ajax({
         url: "https://slink.herokuapp.com/link",
