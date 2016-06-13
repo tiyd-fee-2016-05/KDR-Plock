@@ -114,6 +114,7 @@ $
 $('#addBookmarkSubmit').click(function(e) {
 
     e.preventDefault();
+    savePostCall()
     $('#addBookmarkWrapper').css('display', 'none');
     console.log('attempt to add bookmark')
     // $('.savedBookmarks').append('.');
@@ -157,8 +158,11 @@ $('#addBookmarkSubmit').click(function(e) {
 
         // $('#addBookmarkSubmit').on('click', function() {
 
-       });
+
     });
+
+    
+  });
 
 
 
