@@ -56,40 +56,38 @@ $('.confirm').on('click', function jSONson() {
 //APPENDING NEW BOOKMARK//
 
 
-$('#addBookmarkSubmit').on('click', function jSONson() {
-
-    console.log('bookmark submit clicked');
-
-    $.ajax({
-        url: "https://slink.herokuapp.com/link",
-        dataType: "JSON",
-        method: 'POST',
-        beforeSend: function(xhr) {
-            xhr.setRequestHeader('Authorization', 'person1');
-        },
-
-    }).done(function(data) {
-        console.log("success!");
-        console.log(data);
-    });
-
-    // var brandNewBookmark = ['#li1', '#li2', '#li3']
-    // array.push(brandNewBookmark).append('.addBookmarkWrapper')
-
-    for (var i = 0; i < data.length; i++) {
-        var newTitleSave = (data[i].title);
-        var newDescSave = (data[i].description);
-        var newUrlSave = (data[i].URL);
-
-
-        $('#addBookmarkSubmit').on('click', function() {
-            $('.newLi').css('display', 'block');
-            $('.newTitle').append(newTitleSave);
-            $('.newDesc').append(newDescSave);
-            $('.newURL').append(newUrlSave);
-        });
-    };
-});
+// $('#addBookmarkSubmit').on('click', function jSONson() {
+//
+//     console.log('bookmark submit clicked');
+//
+//     $.ajax({
+//         method: 'POST',
+//         dataType: "JSON",
+//         data: {"created_by" : 'person1', "title":$('input[name = "addnewtitle"]').val() "URL": $('input [name = "addnewurl"]'.val(), "description": $('input [name="addnewdesc"]'.val()},
+//         url: "https://slink.herokuapp.com/link",
+//         beforeSend: function(xhr) {
+//             xhr.setRequestHeader('Authorization', 'person1');
+//         },
+//
+//     }).done(function(data) {
+//         console.log("success!");
+//         console.log(data);
+//     });
+//
+//     for (var i = 0; i < data.length; i++) {
+//         var newTitleSave = (data[i].title);
+//         var newDescSave = (data[i].description);
+//         var newUrlSave = (data[i].URL);
+//
+//
+//         $('#addBookmarkSubmit').on('click', function() {
+//             $('.newLi').css('display', 'block');
+//             $('.newTitle').append(newTitleSave);
+//             $('.newDesc').append(newDescSave);
+//             $('.newURL').append(newUrlSave);
+//         });
+//     };
+// });
 
 //USER LOGIN (LEADS TO SHOW BOOKMARKS)
 
