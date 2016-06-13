@@ -32,6 +32,12 @@ img {
     border: none;
     outline-style: none;
 }
+
+.signin:hover{
+  background-color:#A3564D;
+}
+
+
 .login-container.showing {
     display: block;
 }
@@ -41,6 +47,7 @@ img {
     display: none;
     border: solid 1px #D5D5D5;
 }
+
 .siteName {
     font-family: Source Sans Pro;
     color: white;
@@ -52,6 +59,7 @@ img {
     border-bottom: solid 1px #D5D5D5;
     background: #D5D5D5;
 }
+
 #username-login {
     letter-spacing: 1.5px;
     display: block;
@@ -81,6 +89,10 @@ img {
     outline-style: none;
 }
 
+.confirm:hover{
+  background-color:#A3564D;
+}
+
 /*ADD NEW BOOKMARK*/
 
 /*button*/
@@ -94,7 +106,6 @@ img {
 }
 
 .addNewBookmark:hover{
-  cursor: pointer;
   color: #A3564D;
   background-color: #fafafa;
   font-size: 1.5em;
@@ -113,18 +124,18 @@ img {
   color: #d5d5d5;
   float: right;
   background-color: #fafafa;
-  border: solid 2px #d5d5d5;
+  border: solid 1px #d5d5d5;
   outline: none;
 }
 
 .closeAddNew:hover{
   color: #A3564D;
-  border: solid 2px #A3564D;
+  border: solid 1px #A3564D;
 }
 
 .addBookmarkWrapper{
   display: none;
-  border: solid 2px #d5d5d5;
+  border: solid 1px #d5d5d5;
   width: 15em;
   margin: 1.5em 6em 1.5em 5em;
   padding: 1em 1em 1em 4.6em;
@@ -187,7 +198,6 @@ h3 {
     /*line-height: 0.5;*/
     padding-right: 10px;
     /*transition-delay:  1s;*/
-    cursor: pointer;
 }
 .Bookmark-choices {
     margin: 0 0 0.3em;
@@ -197,7 +207,6 @@ h3 {
     font-size: 1em;
     font-weight: 300;
     font-style: normal;
-    cursor: pointer;
 }
 h3:hover>i {
     color: #A3564D;
@@ -240,6 +249,10 @@ h3:hover>i {
   height: 2.5em;
 }
 
+#getRecButton:hover{
+  background-color:#A3564D;
+}
+
 #makeRecButton{
   margin-bottom: .5em;
   background-color: #d5d5d5;
@@ -252,9 +265,13 @@ h3:hover>i {
   height: 2.5em;
 }
 
+#makeRecButton:hover{
+  background-color:#A3564D;
+}
+
 .makeRecommendations{
   display: none;
-  border: solid 2px #d5d5d5;
+  border: solid 1px #d5d5d5;
   width: 15em;
   margin: 1.5em 6em 1.5em 5em;
   padding: 1em 1em 1em 4.6em;
@@ -265,18 +282,19 @@ h3:hover>i {
   color: #d5d5d5;
   float: right;
   background-color: #fafafa;
-  border: solid 2px #d5d5d5;
+  border: solid 1px #d5d5d5;
   outline: none;
 }
 
 .closeGetRecs:hover{
   color: #A3564D;
-  border: solid 2px #A3564D;
+  border: solid 1px #A3564D;
 }
 
 /*Input styling in "Add New Bookmark" Section*/
 
 #makeRecsSubmit{
+  text-align: center;
   display: inline-flex;
   background-color: #d5d5d5;
   border: none;
@@ -285,7 +303,8 @@ h3:hover>i {
   letter-spacing: 1.5px;
   color: white;
   height: 2.5em;
-  padding: 0 4em;
+  width: 16em;
+  padding: 0 5em;
 }
 
 #makeRecsSubmit:hover{

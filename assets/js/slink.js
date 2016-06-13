@@ -126,6 +126,12 @@ $('.closeAddNew').click(function() {
     console.log('close addBookmark');
 });
 
+$('#addBookmarkSubmit').click(function() {
+    $('.addBookmarkWrapper').css('display', 'none');
+
+    console.log('sabmit addBookmark');
+});
+
 //FUNCTION FOR WHEN ADDBOOKMARK FORMS ARE SUBMITTED
 
 // $('#addBookmarkSubmit').click(function(e) {
@@ -180,4 +186,10 @@ $('#makeRecButton').click(function() {
 $('.closeGetRecs').click(function() {
     $('.makeRecommendations').css('display', 'none');
     console.log('get recs button working');
+});
+
+$('#makeRecsSubmit').click(function() {
+    $('.makeRecommendations').css('display', 'none');
+
+    console.log('sabmit addBookmark');
 });
