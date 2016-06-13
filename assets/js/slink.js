@@ -115,21 +115,31 @@ $('#addBookmarkSubmit').click(function(e) {
 
     e.preventDefault();
     $('#addBookmarkWrapper').css('display', 'none');
-    console.log('clicked')
+    console.log('attempt to add bookmark')
     $('.savedBookmarks').append('.newBookmark');
+
+    var myData = {
+      created_by: 'person1',
+      title: $('input[name="addnewtitle"]').val(),
+      description: $('input[name="addnewdesc"]').val(),
+      url: $('input[name="addnewurl"]').val()
+    };
 
     $(function savePostCall() {
         $.ajax({
-            type: 'POST',
+            method: 'POST',
             dataType: 'json',
-            // data: JSON.stringify ({ 'title'})
             url: "https://slink.herokuapp.com/link",
-            beforeSend: function(xhr) {
-                xhr.setRequestHeader('Authorization', 'person1');
-                //Make information into variables. Values
-            },
-        }).done(function(data) {
+            data: JSON.stringify (myData)
+          //   data: ({ "username": $('input[name="username2"]').val(), "title": $('input[name="addnewtitle"]').val(), "URL": $('input[name="addnewurl"]').val(), "description": $('input[name="addnewdesc"]').val()
+          // })
 
+            // beforeSend: function(xhr) {
+            //     xhr.setRequestHeader('Authorization', 'person1');
+            //     //Make information into variables. Values
+            // },
+        }).done(function(data) {
+            console.log(data);
             console.log('save bookmark called');
             console.log('ajax called, new bookmark submitted successfully');
         });
