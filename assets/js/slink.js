@@ -150,11 +150,11 @@ function jSONson() {
             var byRecommend= (data[i].created_by);
             var atRecommend = (data[i].created_at);
         };
-        $('.recommendTitle').append("Title: " + titleRecommend);
-        $('.recommendDesc').append("Description: " + desRecommend);
-        $('.recommendURL').append("URL: " + Url);
-        $('.recommendBy').append("Created by: " + byRecommend);
-        $('.recommendAt').append("Created at: " + atRecommend);
+        $('.infoTitle').append("Title: " + titleRecommend);
+        $('.infoDesc').append("Description: " + desRecommend);
+        $('.infoURL').append("URL: " + Url);
+        $('.infoBy').append("Created by: " + byRecommend);
+        $('.infoAt').append("Created at: " + atRecommend);
     });
 
     console.log("Ajax call!");
