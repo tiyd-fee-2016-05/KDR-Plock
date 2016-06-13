@@ -1,91 +1,235 @@
-.savedbook {
-  /*border: 1px solid black;*/
-  font-family: Helvetica;
-  letter-spacing: .5px;
-  padding: 2.5px;
-  width: 40%;
-  margin-left: 20px;
+body {
+    background-color: #fafafa;
+}
+html {
+    font: 100%;
+}
+.mainWrap {
+    padding: 0 6em;
+    width: 40%;
+    margin: auto;
 }
 
-.user-form {
-  padding: 10px;
-  text-align: center;
-  font-family: Helvetica;
-  font-size: 12px;
+/* LOGO */
+
+img {
+    margin: 0 12.4em;
+    width: 100px;
+    height: 100px;
 }
 
- .listname {
-  font-weight: bold;
+/* USER LOGIN MODAL */
+
+.signin {
+    display: block;
+    letter-spacing: 1.5px;
+    margin: 5em 13.6em;
+    width: 200px;
+    height: 25px;
+    text-align: center;
+    background-color: #D5D5D5;
+    color: white;
+    border: none;
+    outline-style: none;
+}
+.login-container.showing {
+    display: block;
+}
+.login-container {
+    margin: 3em 7.8em;
+    width: 16em;
+    display: none;
+    border: solid 1px #D5D5D5;
+}
+.siteName {
+    font-family: Source Sans Pro;
+    color: white;
+    letter-spacing: 10px;
+    text-align: center;
+    font-size: 50px;
+    padding-bottom: 22px 0 22px 0;
+    margin-bottom: 22px;
+    border-bottom: solid 1px #D5D5D5;
+    background: #D5D5D5;
+}
+#username-login {
+    letter-spacing: 1.5px;
+    display: block;
+    text-align: center;
+    margin: 0 5.4em;
+}
+#password-login {
+    visibility: visible;
+    letter-spacing: 1.5px;
+    display: block;
+    text-align: center;
+    margin: 0 5.4em;
+}
+.confirm {
+    display: none;
+}
+.confirm.showing {
+    display: block;
+    letter-spacing: 1.5px;
+    margin-top: 2.5em;
+    width: 23.3em;
+    height: 25px;
+    text-align: center;
+    background-color: #D5D5D5;
+    color: white;
+    border: none;
+    outline-style: none;
 }
 
-.secondary-btn {
+/*ADD NEW BOOKMARK*/
+
+/*button*/
+.addNewBookmark{
+  color: black;
+  border: none;
+  float: right;
+  background-color: #fafafa;
+  font-size: 1em;
+  outline: none;
+}
+
+.addNewBookmark:hover{
+  cursor: pointer;
+  color: #A3564D;
+  background-color: #fafafa;
+  font-size: 1.5em;
+}
+
+
+/*modal triggered by button*/
+
+.addBM{
+  color:#A3564D;
+  float: right;
+}
+
+.closeAddNew{
+  font-family: source sans pro;
+  color: #d5d5d5;
+  float: right;
+  background-color: #fafafa;
+  border: solid 2px #d5d5d5;
+  outline: none;
+}
+
+.closeAddNew:hover{
+  color: #A3564D;
+  border: solid 2px #A3564D;
+}
+
+.addBookmarkWrapper{
   display: none;
-  margin-left: 10px;
-  padding: 5px;
+  border: solid 2px #d5d5d5;
+  width: 15em;
+  margin: 1.5em 6em 1.5em 5em;
+  padding: 1em 1em 1em 4.6em;
 }
 
+.newBookmarkInfo{
+  margin: 1em 3em 1em 0;
+  letter-spacing: 1.5px;
+  font-family: source sans pro;
+  text-align:left;
+  padding: 0 5.8em 0 0;
+}
+
+#addBookmarkSubmit{
+  display: inline-flex;
+  background-color: #d5d5d5;
+  border: none;
+  outline: none;
+  font-family: source sans pro;
+  letter-spacing: 1.5px;
+  color: white;
+  height: 2.5em;
+  padding: 0 4em;
+}
+
+#addBookmarkSubmit:hover{
+  background-color:#A3564D;
+}
+
+/*Rhonda's Nested Accordion Components*/
+
+.savedBookmarkAccordion {
+    display: none;
+    font-family: Source Sans Pro;
+    letter-spacing: 1.5px;
+    color: #d5d5d5;
+    margin: 2em 2.6em;
+    width: 80%;
+}
 h3 {
-  padding-left: 20px;
-  padding-top: 20px;
-  font-family: Helvetica;
+    font-family: Source Sans Pro;
+    letter-spacing: 1.5px;
+    color: #d5d5d5;
+}
+.bookmark-area {
+    margin: 4em 0em 0em 3em;
+}
+.accordion-panel {
+    display: none;
+}
+.fa.fa-arrow-right {
+    font-style: normal;
+    font-size: 0.5em;
+    font-weight: normal;
+    font-variant: inherit;
+    /*line-height: 0.5;*/
+    padding-right: 10px;
+    /*transition-delay:  1s;*/
+    cursor: pointer;
+}
+.Bookmark-choices {
+    margin: 0 0 0.3em;
+    padding: 1em 0 0.5em;
+    color: black;
+    border-bottom: 1px solid #ddd;
+    font-size: 1em;
+    font-weight: 300;
+    font-style: normal;
+    cursor: pointer;
+}
+h3:hover>i {
+    color: #A3564D;
+}
+.hide-right-arrow {
+    display: none;
+}
+.hide-down-arrow {
+    display: none;
+}
+.show-down-arrow {
+    /**  JS class **/
+    display: inline;
+}
+
+.fa-bookmark{
+  color:#A3564D;
+}
+
+/* Recommendations Buttons */
+
+.recButton{
+  margin-bottom: .5em;
+  background-color: #d5d5d5;
+  border: none;
+  outline: none;
+  font-family: source sans pro;
+  letter-spacing: 1.5px;
+  color: white;
+  width: 37.3em;
+  height: 2.5em;
+}
+
+.newLi {
   display: none;
-  color: darkgrey;
-}
-
-.searchform {
-  height: 15px;
-}
-
-.info {
-  list-style: none;
-  line-height: 1.5;
-}
-
-h1 {
-  text-align: center;
-  color: darkgrey;
-  font-family: Helvetica;
-  border-bottom: 2px solid darkgrey;
-  padding: 5px 5px 10px 5px;
-  margin-top: 5px;
-}
-
-#savedbookX {
-  border-bottom: 0;
-}
-
-ul {
-  list-style: none;
-}
-/*/////// START OF MODAL STYLING //////*/
-
-.modal {
- position: fixed;
- margin-top: 12em;/**   WIDTH AND HEIGHT STYLING  **/
- margin-left: 6em;
- bottom: 1em;
- right: 1em;
- background: white;
- /*border: 1px solid black;*/
- /*padding: 1em;*/
- border-radius: 3px;
 }
 
 
-.modal-container {
- position: fixed;
- top: 19em;/**** THIS MAKES 100% WIDTH AND HEIGHT    ****/
- left: 12em;
- right: 10em;
- bottom: 12em;
- background: #D5D5D5 ;
- display: none;
-}
-
-.modal-container.showing {
- display: block;
-}
-
-#modal-close {
-margin: 0% 0%;
-}
+/* Add Bookmark Modal */
