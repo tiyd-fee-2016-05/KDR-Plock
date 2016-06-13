@@ -53,41 +53,48 @@ $('.confirm').on('click', function jSONson() {
     console.log("Ajax call!");
 });
 
-//APPENDING NEW BOOKMARK//
+// APPENDING NEW BOOKMARK//
 
 
-// $('#addBookmarkSubmit').on('click', function jSONson() {
-//
-//     console.log('bookmark submit clicked');
-//
-//     $.ajax({
-//         method: 'POST',
-//         dataType: "JSON",
-//         data: {"created_by" : 'person1', "title":$('input[name = "addnewtitle"]').val() "URL": $('input [name = "addnewurl"]'.val(), "description": $('input [name="addnewdesc"]'.val()},
-//         url: "https://slink.herokuapp.com/link",
-//         beforeSend: function(xhr) {
-//             xhr.setRequestHeader('Authorization', 'person1');
-//         },
-//
-//     }).done(function(data) {
-//         console.log("success!");
-//         console.log(data);
-//     });
-//
-//     for (var i = 0; i < data.length; i++) {
-//         var newTitleSave = (data[i].title);
-//         var newDescSave = (data[i].description);
-//         var newUrlSave = (data[i].URL);
-//
-//
-//         $('#addBookmarkSubmit').on('click', function() {
-//             $('.newLi').css('display', 'block');
-//             $('.newTitle').append(newTitleSave);
-//             $('.newDesc').append(newDescSave);
-//             $('.newURL').append(newUrlSave);
-//         });
-//     };
-// });
+$('#addBookmarkSubmit').click(function() {
+
+    $('#addBookmarkWrapper').css('display', 'none');
+    console.log('attempt to add bookmark')
+    $('.savedBookmarks').append('.newBookmark');
+    var myData = JSON.stringify({
+      created_by: 'person1',
+      title: $('input[name="addnewtitle"]').val(),
+      description: $('input[name="addnewdesc"]').val(),
+      URL: $('input[name="addnewurl"]').val()
+    });
+    console.log(myData);
+    $(function savePostCall() {
+        $.ajax({
+            method: 'POST',
+            dataType: 'json',
+            url: "https://slink.herokuapp.com/link",
+            data: myData,
+            beforeSend: function(xhr) {
+                xhr.setRequestHeader('Authorization', 'person1');
+            },
+          //   data: ({ "username": $('input[name="username2"]').val(), "title": $('input[name="addnewtitle"]').val(), "URL": $('input[name="addnewurl"]').val(), "description": $('input[name="addnewdesc"]').val()
+          // })
+            // beforeSend: function(xhr) {
+            //     xhr.setRequestHeader('Authorization', 'person1');
+            //     //Make information into variables. Values
+            // },
+        }).done(function(data) {
+            console.log(data);
+            console.log('save bookmark called');
+            console.log('ajax called, new bookmark submitted successfully');
+            $('.newLi').css('display', 'block');
+            $('.newTitle').append(myData[1]);
+            $('.newDesc').append(myData[2]);
+            $('.newURL').append(myData[3]);
+        });
+        // $('#addBookmarkSubmit').on('click', function() {
+       });
+    });
 
 //USER LOGIN (LEADS TO SHOW BOOKMARKS)
 
