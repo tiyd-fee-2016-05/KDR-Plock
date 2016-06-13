@@ -1,68 +1,68 @@
 
-////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
 //                   NESTED ACCORDION        ///////////////////////////////////
-$(".Bookmark-choices").click(function(){
-    $(this).next().toggle();
-    $("i", this).toggleClass("hide-right-arrow");
-    $("i", this).last().toggleClass("show-down-arrow");
-  });
-
-  $(".Section-A").click(function(){
-      $(this).next().toggle();
-      $("i", this).toggleClass("hide-right-arrow");
-      $("i", this).last().toggleClass("show-down-arrow");
-  });
-
-////////////////////////////////////////////////////////////////////////////////
-
-
-//////////       MODAL       (Rhonda before collaborating with group)         ////////////////////////////////////////////////
-    $('h1').on("click", function () {//when you click on the btn the modal pops up//
-        $(this).text("recommendations");//when you click on the btn the text changes//
-
-    $('.modal-container').addClass('showing');
-
-    console.log("yes");
-});
-    $('#modal-close').on('click', function () {
-      //when you click on the recommendations the modal container disappears//
-      $('.modal-container').removeClass('showing');
-    console.log("no");
-//     $('.modal').click(function (e) // stops the modal container from appearing after it's closed//
-//       e.stopPropagation();
+// $(".Bookmark-choices").click(function(){
+//     $(this).next().toggle();
+//     $("i", this).toggleClass("hide-right-arrow");
+//     $("i", this).last().toggleClass("show-down-arrow");
+//   });
+//
+//   $(".Section-A").click(function(){
+//       $(this).next().toggle();
+//       $("i", this).toggleClass("hide-right-arrow");
+//       $("i", this).last().toggleClass("show-down-arrow");
+//   });
+//
+// ////////////////////////////////////////////////////////////////////////////////
+//
+//
+// //////////       MODAL       (Rhonda before collaborating with group)         ////////////////////////////////////////////////
+//     $('h1').on("click", function () {//when you click on the btn the modal pops up//
+//         $(this).text("recommendations");//when you click on the btn the text changes//
+//
+//     $('.modal-container').addClass('showing');
+//
+//     console.log("yes");
 // });
-});
-
-//////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-//////////////////////////////////////////////////////////////////////////////////////////
-
-
-//////////       MODAL      (After we collaborated an used it in our project) //////////////////
-    $('.secondary-btn').on("click", function() { //when you click on the btn the modal pops up//
-
-
-        $('.modal-container').addClass('showing');
-
-        console.log("yes");
-    });
-    $('#modal-close').on('click', function() {
-
-        $('.modal-container').removeClass('showing');
-        console.log("no");
-        //     $('.modal').click(function (e) // stops the modal container from appearing after it's closed//
-        //       e.stopPropagation();
-        // });
-    });
+//     $('#modal-close').on('click', function () {
+//       //when you click on the recommendations the modal container disappears//
+//       $('.modal-container').removeClass('showing');
+//     console.log("no");
+// //     $('.modal').click(function (e) // stops the modal container from appearing after it's closed//
+// //       e.stopPropagation();
+// // });
+// });
+//
+// //////////////////////////////////////////////////////////////////////////////////////////
+//
+//
+//
+//
+// //////////////////////////////////////////////////////////////////////////////////////////
+//
+//
+// //////////       MODAL      (After we collaborated an used it in our project) //////////////////
+//     $('.secondary-btn').on("click", function() { //when you click on the btn the modal pops up//
+//
+//
+//         $('.modal-container').addClass('showing');
+//
+//         console.log("yes");
+//     });
+//     $('#modal-close').on('click', function() {
+//
+//         $('.modal-container').removeClass('showing');
+//         console.log("no");
+//         //     $('.modal').click(function (e) // stops the modal container from appearing after it's closed//
+//         //       e.stopPropagation();
+//         // });
+//     });
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 
-          //////////////  AJAX "GET" AND "POST" RECOMMENDATIONS  ///////
+          //////////////  AJAX "GET" AND "POST" BOOKMARK RECOMMENDATIONS  ///////
           //        *********************************************     //
           /////////////////////////////////////////////////////////////
 
@@ -95,11 +95,11 @@ $(".Bookmark-choices").click(function(){
               var byRecommend= (data[i].created_by);
               var atRecommend = (data[i].created_at);
           };
-          $('.recommendTitle').append("Title: " + titleRecommend);
-          $('.recommendDesc').append("Description: " + desRecommend);
-          $('.recommendURL').append("URL: " + Url);
-          $('.recommendBy').append("Created by: " + byRecommend);
-          $('.recommendAt').append("Created at: " + atRecommend);
+          $('.infoTitle').append("Title: " + titleRecommend);
+          $('.infoDesc').append("Description: " + desRecommend);
+          $('.infoURL').append("URL: " + Url);
+          $('.infoBy').append("Created by: " + byRecommend);
+          $('.infoAt').append("Created at: " + atRecommend);
       });
 
       console.log("Ajax call!");
