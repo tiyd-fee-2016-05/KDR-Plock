@@ -22,7 +22,7 @@ $('.confirm').on("click", function() {
 
 //David's GET request; appends information to assigned sections//
 //Will pull user information triggered by clicking on "Saved Bookmarks"//
-$('.Bookmark-choices').on('click', function jSONson() {
+$('.confirm').on('click', function jSONson() {
 
     $.ajax({
         url: "https://slink.herokuapp.com/link",
@@ -46,13 +46,50 @@ $('.Bookmark-choices').on('click', function jSONson() {
         $('.infoTitle').append(titleSave);
         $('.infoDesc').append(descSave);
         $('.infoURL').append(urlSave);
-        $('.infoBy').append( bySave);
+        $('.infoBy').append(bySave);
         $('.infoAt').append(atSave);
     });
 
     console.log("Ajax call!");
 });
 
+//APPENDING NEW BOOKMARK//
+
+
+$('#addBookmarkSubmit').on('click', function jSONson() {
+
+    console.log('bookmark submit clicked');
+
+    $.ajax({
+        url: "https://slink.herokuapp.com/link",
+        dataType: "JSON",
+        method: 'POST',
+        beforeSend: function(xhr) {
+            xhr.setRequestHeader('Authorization', 'person1');
+        },
+
+    }).done(function(data) {
+        console.log("success!");
+        console.log(data);
+    });
+
+    // var brandNewBookmark = ['#li1', '#li2', '#li3']
+    // array.push(brandNewBookmark).append('.addBookmarkWrapper')
+
+    for (var i = 0; i < data.length; i++) {
+        var newTitleSave = (data[i].title);
+        var newDescSave = (data[i].description);
+        var newUrlSave = (data[i].URL);
+
+
+        $('#addBookmarkSubmit').on('click', function() {
+            $('.newLi').css('display', 'block');
+            $('.newTitle').append(newTitleSave);
+            $('.newDesc').append(newDescSave);
+            $('.newURL').append(newUrlSave);
+        });
+    };
+});
 
 //USER LOGIN (LEADS TO SHOW BOOKMARKS)
 
@@ -75,23 +112,6 @@ $(".Section-A").click(function() {
     $("i", this).last().toggleClass("show-down-arrow");
 });
 
-
-//SAVE BOOKMARKS ('POST' REQUEST)
-//While this appears to be really standard jQuery ajax call, this was found as a response on a Stack Overflow question by user 'Roger' on http://stackoverflow.com/questions/15308017/save-data-through-ajax-jquery-post-with-form-submit//
-
-// $(function savePostCall(){
-// $.ajax({
-//   type: 'POST',
-//   dataType: 'json',
-//   url: "https://slink.herokuapp.com/link",
-//   success: function(data){
-//     }
-//   });
-//
-//   console.log('save bookmark called');
-//
-// });
-
 //FUNCTION FOR ADD BOOKMARK MODAL
 
 $('.addNewBookmark').click(function() {
@@ -100,41 +120,66 @@ $('.addNewBookmark').click(function() {
     console.log('addBookmark modal working');
 });
 
-  $('.closeAddNew').click(function(){
+//FUNCTION FOR EXITING BOOKMARK
+
+$('.closeAddNew').click(function() {
     $('.addBookmarkWrapper').css('display', 'none');
 
     console.log('close addBookmark');
 });
 
-//FUNCTION FOR EXITING BOOKMARK
-$
-
 //FUNCTION FOR WHEN ADDBOOKMARK FORMS ARE SUBMITTED
 
-$('#addBookmarkSubmit').click(function(e) {
+// $('#addBookmarkSubmit').click(function(e) {
+//
+//     e.preventDefault();
+//     $('#addBookmarkWrapper').css('display', 'none');
+//     console.log('clicked')
+//     $('.savedBookmarks').append('.newBookmark');
+//
+//     $(function savePostCall() {
+//         $.ajax({
+//             type: 'POST',
+//             dataType: 'json',
+//             // data: JSON.stringify ({ 'title'})
+//             url: "https://slink.herokuapp.com/link",
+//             beforeSend: function(xhr) {
+//                 xhr.setRequestHeader('Authorization', 'person1');
+//                 //Make information into variables. Values
+//             },
+//         }).done(function(data) {
+//
+//           for (var i = 0; i < data.length; i++) {
+//               var titleSave = (data[i].title);
+//               var descSave = (data[i].description);
+//               var urlSave = (data[i].URL);
+//               var bySave = (data[i].created_by);
+//               var atSave = (data[i].created_at);
+//           };
+//           $('.infoTitle').append(titleSave);
+//           $('.infoDesc').append(descSave);
+//           $('.infoURL').append(urlSave);
+//           $('.infoBy').append( bySave);
+//           $('.infoAt').append(atSave);
+//       });
+//
+//             console.log('save bookmark called');
+//             console.log('ajax called, new bookmark submitted successfully');
+//
+//
+//
+//         });
+//     });
+// });
 
-    e.preventDefault();
-    $('#addBookmarkWrapper').css('display', 'none');
-    console.log('clicked')
-    $('.savedBookmarks').append('.newBookmark');
+//RECOMMENDATIONS
 
-    $(function savePostCall() {
-        $.ajax({
-            type: 'POST',
-            dataType: 'json',
-            // data: JSON.stringify ({ 'title'})
-            url: "https://slink.herokuapp.com/link",
-            beforeSend: function(xhr) {
-                xhr.setRequestHeader('Authorization', 'person1');
-                //Make information into variables. Values
-            },
-        }).done(function(data) {
-
-            console.log('save bookmark called');
-            console.log('ajax called, new bookmark submitted successfully');
-        });
-    });
+$('#makeRecButton').click(function() {
+    $('.makeRecommendations').css('display', 'block');
+    console.log('get recs button working');
 });
 
-
-//See Bookmarks
+$('.closeGetRecs').click(function() {
+    $('.makeRecommendations').css('display', 'none');
+    console.log('get recs button working');
+});

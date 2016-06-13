@@ -50,11 +50,21 @@
         <!--SEQUENCE 2.A - ADD BOOKMARKS -->
                     <div class = "addBookmarkWrapper">
                       <button class = "closeAddNew"><i class="fa fa-times" aria-hidden="true"></i></button>
-                      <div><input class = "newBookmarkInfo" placeholder = "title"></input></div>
-                      <div><input class = "newBookmarkInfo" placeholder = "URL"></input></div>
-                      <div><input class = "newBookmarkInfo" placeholder = "description"></input></div>
+                      <div><input class = "newInfoInput" placeholder = "title"></input></span></div>
+                      <div><input class = "newInfoInput" placeholder = "URL"></input></div>
+                      <div><input class = "newInfoInput" placeholder = "description"></input></span></div>
                     <button id = "addBookmarkSubmit"> add bookmark </button>
                   </div>
+
+      <!--SEQUENCE 3.A - GET RECOMMENDATIONS -->
+                    <div class = "makeRecommendations">
+                      <button class = "closeGetRecs"><i class="fa fa-times" aria-hidden="true"></i></button>
+                      <div><input class = "newInfoInput" placeholder = "from"></input></div>
+                      <div><input class = "newInfoInput" placeholder = "to"></input></div>
+                      <div><input class = "newInfoInput" placeholder = "url"></input></div>
+                      <div><input class = "newInfoInput" placeholder = "description"></input></div>
+                      <button id = "makeRecsSubmit"> submit rec </button>
+                    </div>
 
         <!-- Rhonda's Nested Accordion -->
         <!--List information appended with David's GET request-->
@@ -71,6 +81,7 @@
             <div class="accordion-panel" id="1">
 
                 <ul class="Lists">
+                <li class ="li-numbers" id = 'li1'>
                     <i class="fa fa-bookmark" aria-hidden="true"></i>
                     <li class="info"><span class="infoTitle"></span></li>
 
@@ -85,7 +96,7 @@
 
                     <br>
 
-
+                    <li class ="li-numbers" id = 'li2'>
                     <i class="fa fa-bookmark" aria-hidden="true"></i>
                     <li class="info"><span class="infoTitle"></span></li>
 
@@ -101,19 +112,31 @@
                             <li class="info"><span class="infoBy"></span></li>
                             <br>
 
-                            <i class="fa fa-bookmark" aria-hidden="true"></i>
-                            <li class="info"><span class="infoTitle"></span></li>
 
-                            <li class="info"><span class="infoURL"></span></li>
+                        <li class ="li-numbers" id = 'li3'>
+                          <i class="fa fa-bookmark" aria-hidden="true"></i>
+                          <li class="info"><span class="infoTitle"></span></li>
 
-                            <li class="info">
+                          <li class="info"><span class="infoURL"></span></li>
+
+                          <li class="info">
                                 "</span><span class="infoDesc"></span>"</li>
 
-                            <li>
+                          <li>
                                 <li class="info"><span class="infoAt"></span></li>
 
                                 <li>
                                     <li class="info"><span class="infoBy"></span></li>
+
+                          <div class = "newLi">
+                          <i class="fa fa-bookmark" aria-hidden="true"></i>
+                          <li class="info"><span class="newTitle"></span></li>
+
+                          <li class="info"><span class="newURL"></span></li>
+
+                          <li class="info">
+                          </span><span class="newDesc"></span></li>
+                        </div>
                 </ul>
             </div>
 
@@ -128,11 +151,11 @@
 
                     <ul class="Lists">
                         <li>
-                            <button class="recButton"> get recommendations</button>
+                            <button id="getRecButton"> get recommendations</button>
                         </li>
 
                         <li>
-                            <button class="recButton"> make recommendations</button>
+                            <button id="makeRecButton"> make recommendations</button>
                         </li>
 
                     </ul>
